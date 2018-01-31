@@ -1,0 +1,22 @@
+{
+  "name": "BeetleTheme",
+  "homepage": "",
+  "authors": [
+    "Alex Meyerson <alex.meyerson@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "",
+    "font-awesome": "^4.7.0",
+    "modernizer": ""
+  },
+  "overrides": {
+    "font-awesome": {
+      "main": [
+        "./scss/font-awesome.scss",
+        "./fonts/*"
+      ]
+    }
+  }
+}
