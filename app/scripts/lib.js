@@ -844,14 +844,6 @@ var Dropdown = function ($) {
   return Dropdown;
 }($, Popper);
 //# sourceMappingURL=dropdown.js.map
-// Begin main.js
-// ===================================
-
-$(document).ready(function() {
-    
-    console.log('hello world');
-
-});
 /**
  * --------------------------------------------------------------------------
  * Bootstrap (v4.0.0): util.js
@@ -991,3 +983,12 @@ var Util = function ($) {
   return Util;
 }($);
 //# sourceMappingURL=util.js.map
+// Begin main.js
+// ===================================
+'use strict';
+
+$(document).ready(function() {
+    
+    console.log('hello world');
+
+});
