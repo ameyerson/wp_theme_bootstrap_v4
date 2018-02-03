@@ -15,10 +15,6 @@ switch ($hostname) {
     //     define('WP_ENV', 'staging');
     //     define('WP_DEBUG', true);
     //     break;
-    // case 'www.mywebsite.com':
-    //     define('WP_ENV', 'production');
-    //     define('WP_DEBUG', false);
-    //     break;
     default:
         define('WP_ENV', 'production');
         define('WP_DEBUG', false);
