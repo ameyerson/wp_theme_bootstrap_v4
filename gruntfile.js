@@ -15,7 +15,8 @@ module.exports = function(grunt) {
 
 		config: {
 		   app: 'app',
-		   dist: 'dist'
+		   dist: 'dist',
+           build: 'build/BeetleBailey',
 		},
 		bower: {
 			install: {
@@ -42,8 +43,9 @@ module.exports = function(grunt) {
 		concat: {
 		   js: {
 		       	src: [
-		   			// 'lib/jquery/jquery.js',
-		   			'source/{,*/}*.js',
+                    'source/scripts/libraries/{,*/}*.js',
+                    'source/scripts/components/{,*/}*.js',
+		   			'source/scripts/{,*/}*.js',
 		   			'!<%= config.app %>/scripts/vendor/*'
 		   		],
 		       	dest: '<%= config.app %>/scripts/lib.js'
@@ -121,7 +123,22 @@ module.exports = function(grunt) {
 		                'styles/fonts/{,*/}*.*'
 		            ]
 		        }]
-		    }
+		    },
+            build: {
+                files: [{
+                    expand: true,
+                    dest: '<%= config.build %>',
+                    src: [
+                    'README.txt',
+                    'style.css',
+                    '*.php',
+                    'lib/**',
+                    'dist/**',
+                    'assets/**',
+                    'acf/**'
+                    ]
+                }]
+            }
 		},
 
 		//for build
@@ -133,7 +150,15 @@ module.exports = function(grunt) {
 		                '<%= config.dist %>/*'
 		            ]
 		        }]
-		    }
+		    },
+            build: {
+                files: [{
+                    dot: true,
+                    src: [
+                        '<%= config.build %>/*'
+                    ]
+                }]
+            }
 		},
 		uglify: {
 		    dist: {
@@ -146,16 +171,16 @@ module.exports = function(grunt) {
 		},
 		modernizr: {
 			dist: {
-				"cache" : false,
-				"dest" : "<%= config.dist %>/scripts/vendor/modernizr.js",
-			    "files" : {
-			    	"src" : [
+				'cache' : false,
+				'dest' : '<%= config.dist %>/scripts/vendor/modernizr.js',
+			    'files' : {
+			    	'src' : [
 			        '<%= config.dist %>/scripts/{,*/}*.js',
 			        '<%= config.dist %>/styles/{,*/}*.css',
 			        '!<%= config.dist %>/scripts/vendor/*'
 			    	]
 			    },
-			    "uglify": false
+			    'uglify': false
 			}
 		},
 
@@ -219,40 +244,14 @@ module.exports = function(grunt) {
 		   },
 		   all: [
 		   		'Gruntfile.js',
-		       	'source/{,*/}*.js'
+		       	'source/{,*/}*.js',
+                '!source/scripts/libraries/*'
 		   ]
-		},
-
-        csslint: {
-            lax: {
-                // options: {
-                //     "important": false,
-                //     "adjoining-classes": false,
-                //     "box-sizing": false,
-                //     "order-alphabetical" : false,
-                //     quiet: true
-                // },
-                // src: "<%= config.app %>/styles/main.css"
-            },
-
-            strict: {
-                options: {
-                    "order-alphabetical": false,
-                    "import": false,
-                    // "box-sizing": false,
-                    quiet: false
-                },
-                src: [
-            		'source/styles/{,*/}*.scss',
-            		'!source/styles/libraries/{,*/}*.scss'
-            	]
-            }
-        },
+		}
     });
 
     grunt.registerTask('test', [
-    	'jshint',
-    	'csslint:strict'
+    	'jshint'
     ]);
 
 
@@ -281,6 +280,11 @@ module.exports = function(grunt) {
 		'test:strict', 
 		'build'
 	]);
+    grunt.registerTask('package', [
+        'build',
+        'clean:build',
+        'copy:build'
+    ]);
 };
 
-//TODO: newer, test images, test modernizer
+//TODO: newer, test images

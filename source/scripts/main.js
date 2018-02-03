@@ -1,5 +1,6 @@
 // Begin main.js
 // ===================================
+'use strict';
 
 $(document).ready(function() {
     
