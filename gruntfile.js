@@ -170,8 +170,18 @@ module.exports = function(grunt) {
 		    }
 		},
 		modernizr: {
+            dev: {
+                'dest' : '<%= config.app %>/scripts/vendor/modernizr.js',
+                'files' : {
+                    'src' : [
+                    '<%= config.app %>/scripts/{,*/}*.js',
+                    '<%= config.app %>/styles/{,*/}*.css',
+                    '!<%= config.app %>/scripts/vendor/*'
+                    ]
+                },
+                'uglify': false
+            },
 			dist: {
-				'cache' : false,
 				'dest' : '<%= config.dist %>/scripts/vendor/modernizr.js',
 			    'files' : {
 			    	'src' : [
@@ -180,7 +190,7 @@ module.exports = function(grunt) {
 			        '!<%= config.dist %>/scripts/vendor/*'
 			    	]
 			    },
-			    'uglify': false
+			    'uglify': true
 			}
 		},
 
@@ -263,7 +273,7 @@ module.exports = function(grunt) {
         // 'useminPrepare',
         // 'imagemin',
         'copy:dist',
-        'modernizr',
+        'modernizr:dist',
         'uglify',
         // 'rev',
         // 'usemin',
@@ -272,6 +282,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('compile', [
     	'concat:js',
+        'modernizr:dev',
     	'sass:dev',
         'autoprefixer:dev'
 	]);

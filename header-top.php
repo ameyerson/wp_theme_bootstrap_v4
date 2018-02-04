@@ -12,6 +12,10 @@
 
 	    <?php wp_head(); ?>
 
+        <script>
+          videojs.options.flash.swf = "<?php echo get_stylesheet_directory_uri(); ?>/assets/js/libraries/video-js.swf"
+        </script>
+
 	</head>
 
 <body <?php body_class(); ?>>

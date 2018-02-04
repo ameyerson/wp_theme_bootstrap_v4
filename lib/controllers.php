@@ -5,8 +5,8 @@
  * Please note that missing files will produce a fatal error.
  */
 $controllers = [
-    'lib/controllers/homepage/hero.php', // home hero data
-    'lib/controllers/homepage/title.php', // home hero title
+    'lib/controllers/parts/hero.php', // hero data
+    'lib/controllers/parts/title.php', // hero title
 ];
 
 foreach ( $controllers as $controller ) {
