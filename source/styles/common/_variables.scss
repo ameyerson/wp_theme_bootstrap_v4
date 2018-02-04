@@ -1,5 +1,8 @@
 $bootstrap-sass-asset-helper: false !default;
 
+//--------------------------------------------------------------
+// MEDIA SIZES
+//--------------------------------------------------------------
 $grid-breakpoints: (
   xs: 0,
   sm: 768px,
@@ -14,3 +17,20 @@ $container-max-widths: (
     lg: 1140px,
     xl: 1520px
 );
+
+//--------------------------------------------------------------
+// COLORS
+//--------------------------------------------------------------
+$primary:       #F43448;
+$secondary:     #A882CA;
+
+$body-bg:       #fff;
+
+//--------------------------------------------------------------
+// TYPE VARIABLES
+//--------------------------------------------------------------
+$body-color:    #333;
+/*$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;*/
+$headings-font-family:        'Amatic SC', cursive;
+$headings-font-weight:        700;
+$headings-color:              $primary;

@@ -18,8 +18,10 @@
 				<ul class="pagination">
 				<?php 
 					$pager = paginate_links( array('type' => 'array'));
-					foreach ( $pager as $pgl ) {
-					    echo "<li >$pgl</li>";
+					if (is_array($pager)) {
+						foreach ( $pager as $pgl ) {
+					    	echo "<li >$pgl</li>";
+					    }
 					}
 				?>
 				</ul>
