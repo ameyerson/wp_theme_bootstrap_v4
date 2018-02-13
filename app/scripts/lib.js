@@ -983,82 +983,55 @@ var Util = function ($) {
   return Util;
 }($);
 //# sourceMappingURL=util.js.map
-$(document).ready(function(e) {
+// ===================================
+// Begin fromas.js
+// ===================================
+'use strict';
 
+$(document).ready(function() {
 
-    // var elm = $('.hero-background')
-    // var src = elm.css('background-image');
-    // var url = src.match(/\((.*?)\)/)[1].replace(/('|")/g,'');
+    $('.wpcf7-form  .form-group input, .wpcf7-form .form-group textarea').focusout(function() {
 
-    // var img = new Image();
-    // img.onload = function() {
-    //     elm.fadeIn('slow', function() {
-    //         $(this).addClass('loaded');
-    //         $('.scroll-down-indicator').addClass('loaded');
-    //     });
-    // }
-    // img.src = url;
-    // if (img.complete) img.onload();
+        var inputContent = $(this).val();
 
-    if ($('#hero-video').length > 0) { console.log('video');
-
-        if (($(window).width() > 1024) && (!($('html')).hasClass('no-backgroundsize'))) {
-
-            $video = $('#hero-video');
-
-            mp4 = $video.data('mp4');
-            ogg = $video.data('ogg');
-            webm = $video.data('webm');
-            poster = $video.data('poster');
-
-
-            video_markup = '<video autoplay preload loop id="video1" class="video-js vjs-default-skin" poster="' + poster + '" data-setup="">';
-            if (mp4 != '') {
-                video_markup += '<source src="' + mp4 + '" type="video/mp4" />';
-            }
-            if (ogg != '') {
-                video_markup += '<source src="' + ogg + '" type="video/ogg" />';
-            }
-            if (webm != '') {
-                video_markup += '<source src="' + webm + '" type="video/webm" />';
-            }
-            video_markup += '<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>';
-            video_markup += '</video>';
-
-            $video.append(video_markup);
-
-            $('#hero-video video').on('loadedmetadata', function() {
-                $video.css('opacity',1);
-            });
-
-            if ( ! Modernizr.objectfit ) {
-                //IE
-
-                console.log('ie');
-
-                $('#hero-video video').on('loadedmetadata', function() {
-                    videoRatio = this.videoWidth / this.videoHeight;
-                    $(this).data('ratio', videoRatio);
-                    scaleVideo();
-                });
-
-                $(window).resize(function(){
-                    scaleVideo();
-                });
-
-            }
+        if ( inputContent !== '' ) {
+            $(this).addClass('has-content');
+        } else {
+            $(this).removeClass('has-content');
         }
-    }
+
+    });
+
 });
 
+$(window).on('load', function() {
+
+    $('.wpcf7-form  .form-group input, .wpcf7-form .form-group textarea').each(function() {
+        $(this).focusout();
+    });
+
+});
+// ===================================
+// Begin hero.js
+// ===================================
+'use strict';
+
+/* global Modernizr */
+
 function scaleVideo() {
+
     if ($(window).width() > 1024) {
 
-        var $video = $('#hero-video video');
-            $container = $('#hero-video');
-
+        var $video = $('#hero-video video'),
+            $container = $('#hero-video'),
             videoRatio = $video.data('ratio'),
-            divRatio = $container.width() / $container.height();
+            divRatio = $container.width() / $container.height(),
+            videoHeight = false,
+            containerHeight = false,
+            diffHeight = false,
+            deltaHeight = false,
+            diffWidth = false,
+            deltaWidth = false;
 
          // console.log(videoRatio);
          // console.log(divRatio);
@@ -1114,9 +1087,95 @@ function scaleVideo() {
                 'right': 'auto'
             });
         }
+
     }
 
-}
+} //function scaleVideo()
+
+
+$(document).ready(function() {
+
+
+    var elm = $('.hero-background'),
+        src = elm.css('background-image'),
+        url = src.match(/\((.*?)\)/)[1].replace(/('|")/g,''),
+        $video = false,
+        mp4 = false,
+        ogg = false,
+        webm = false,
+        poster = false,
+        videoMarkup = false,
+        videoRatio = false;
+
+    var img = new Image();
+
+    img.onload = function() {
+        elm.fadeIn('slow', function() {
+
+            $(this).addClass('loaded');
+
+            $('.scroll-down-indicator').addClass('loaded');
+
+        });
+    };
+
+    img.src = url;
+
+    if (img.complete) {
+            img.onload();
+    }
+
+    if ($('#hero-video').length > 0) { 
+
+        if (($(window).width() > 1024) && (!($('html')).hasClass('no-backgroundsize'))) {
+
+            $video = $('#hero-video');
+
+            mp4 = $video.data('mp4');
+            ogg = $video.data('ogg');
+            webm = $video.data('webm');
+            poster = $video.data('poster');
+
+
+            videoMarkup = '<video autoplay preload loop id="video1" class="video-js vjs-default-skin" poster="' + poster + '" data-setup="">';
+            if (mp4 !== '') {
+                videoMarkup += '<source src="' + mp4 + '" type="video/mp4" />';
+            }
+            if (ogg !== '') {
+                videoMarkup += '<source src="' + ogg + '" type="video/ogg" />';
+            }
+            if (webm !== '') {
+                videoMarkup += '<source src="' + webm + '" type="video/webm" />';
+            }
+            videoMarkup += '<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>';
+            videoMarkup += '</video>';
+
+            $video.append(videoMarkup);
+
+            $('#hero-video video').on('loadedmetadata', function() {
+                $video.css('opacity',1);
+            });
+
+
+            if ( ! Modernizr.objectfit ) {
+                //IE
+
+                console.log('ie');
+
+                $('#hero-video video').on('loadedmetadata', function() {
+                    videoRatio = this.videoWidth / this.videoHeight;
+                    $(this).data('ratio', videoRatio);
+                    scaleVideo();
+                });
+
+                $(window).resize(function(){
+                    scaleVideo();
+                });
+
+            }
+        }
+    }
+});
 // Begin main.js
 // ===================================
 'use strict';
@@ -1126,16 +1185,74 @@ $(document).ready(function() {
     console.log('hello world');
 
 });
-$(document).ready(function(e) {
+// ===================================
+// Begin scrollto.js
+// ===================================
+'use strict';
 
-    $total_time = 60;
+$(document).ready(function() {
+
+    $('.scroll-down-indicator').click(function(e) {
+
+        var $target = $(this).attr('href');
+
+        e.preventDefault();
+
+        $target = $(this).attr('href');
+        $('html, body').animate(
+            {
+                scrollTop: $($target).offset().top - 180
+            }, 
+            600, 
+            'easeInOutCubic'
+        );
+    });
+
+});
+
+if (!$('html').hasClass('touch') && $(window).width() > 1199) {
+
+    $(window).on('load resize scroll', function() {
+
+        var $offset = 50;
+
+        $('.animation-ready').each(function() {
+
+            if ( $(this).offset().top < $(window).scrollTop() + $(window).height() - $offset ) {
+
+                $(this).removeClass('animation-ready').addClass('animated');
+
+            }
+
+        });
+
+    });
+
+} else {
+
+    $('.animation-ready').each(function() {
+
+        $(this).removeClass('animation-ready').addClass('animated');
+
+    });
+
+}
+
+'use strict';
+
+$(document).ready(function() {
+
+    var $totalTime = 60,
+        $start,
+        $end,
+        $increment;
 
     $('.counter .data').each(function() { 
 
         $start = parseInt($(this).attr('data-zero')); console.log($start);
         $end = parseInt($(this).attr('data-max'));
 
-        $increment = Math.ceil(($end - $start) / $total_time); console.log($increment);
+        $increment = Math.ceil(($end - $start) / $totalTime); console.log($increment);
         $(this).html(0);
 
         var x = 60;
@@ -1149,10 +1266,10 @@ $(document).ready(function(e) {
 
     function increment(object, increment) {
 
-        $current_val = parseInt(object.html());
-        $new_val = $current_val + increment;
+        var $currentVal = parseInt(object.html());
+        var $newVal = $currentVal + increment;
 
-        object.html($new_val);
+        object.html($newVal);
 
         // console.log(object.html);
     }

@@ -1,13 +1,18 @@
-$(document).ready(function(e) {
+'use strict';
 
-    $total_time = 60;
+$(document).ready(function() {
+
+    var $totalTime = 60,
+        $start,
+        $end,
+        $increment;
 
     $('.counter .data').each(function() { 
 
         $start = parseInt($(this).attr('data-zero')); console.log($start);
         $end = parseInt($(this).attr('data-max'));
 
-        $increment = Math.ceil(($end - $start) / $total_time); console.log($increment);
+        $increment = Math.ceil(($end - $start) / $totalTime); console.log($increment);
         $(this).html(0);
 
         var x = 60;
@@ -21,10 +26,10 @@ $(document).ready(function(e) {
 
     function increment(object, increment) {
 
-        $current_val = parseInt(object.html());
-        $new_val = $current_val + increment;
+        var $currentVal = parseInt(object.html());
+        var $newVal = $currentVal + increment;
 
-        object.html($new_val);
+        object.html($newVal);
 
         // console.log(object.html);
     }
