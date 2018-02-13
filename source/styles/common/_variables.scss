@@ -7,15 +7,15 @@ $grid-breakpoints: (
   xs: 0,
   sm: 768px,
   md: 992px,
-  lg: 1200px,
-  xl: 1560px
+  lg: 1350px,
+  xl: 1660px
 );
 
 $container-max-widths: (
-    sm: 720px,
+/*    sm: 720px,
     md: 960px,
-    lg: 1140px,
-    xl: 1520px
+    lg: 1140px,*/
+    xl: 1580px
 );
 
 //--------------------------------------------------------------
@@ -29,8 +29,23 @@ $body-bg:       #fff;
 //--------------------------------------------------------------
 // TYPE VARIABLES
 //--------------------------------------------------------------
-/*$body-color:    #333;*/
-/*$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;*/
-/*$headings-font-family:        'Amatic SC', cursive;
-$headings-font-weight:        700;
-$headings-color:              $primary;*/
+
+/*$font-size-base: 1.5rem;
+*/
+$body-color:    #454545;
+
+$font-family-sans-serif:            'Quattrocento Sans', sans-serif;
+
+$headings-font-family:              'Amatic SC', cursive;
+$headings-font-weight:              700;
+$headings-color:                    $primary;
+
+
+$sub-headings-font-family:          'Cabin Sketch', cursive;
+$sub-headings-font-weight:          700;
+$sub-headings-color:                $secondary;
+
+$lead-font-family:        'Quattrocento', serif;
+$lead-font-weight:        300;
+$lead-color:              #000;
+$lead-size:               1.35em;

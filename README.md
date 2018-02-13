@@ -1,1 +1,1 @@
-# BeetleBailey Wordpres Theme
+# Lacse of Love Wordpres Theme

@@ -1,54 +1,74 @@
-
-.hero-overlay {
-    position: absolute;
-    top: 0%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 0;
-
-    opacity: 0.5;
-}
-
 .hero {
 
-    .hero-background {
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        position: relative;
-    }
-    .hero-meta {
-        padding: 30px;
-        position: relative;
-        z-index: 0;
-        h1, h2, p {
-            margin: 10px 0;
-/*            max-width: 600px;*/
-/*            color: #fff;*/
-        }
-        h2 {
-            font-size: 1.4em;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.2em;
-            line-height: 1.4em;
+/*    margin-bottom: 30px;*/
+
+    .block-row {
+
+        .item-content {
+
+            font-size: 1rem;
+            line-height: 1.2em;
+
+            .inner {
+                padding: 15px;
+            }
+
+            img {
+                width: 65px;
+                height: auto;
+
+            } 
+            p {
+                margin-bottom: 10px;
+            }
         }
     }
+    
+
+    .page-title {
+        line-height: 1em;
+        margin-bottom: 30px;
+        margin-top: 0px;
+        font-size: 2.4rem;
+
+        @include media-breakpoint-up(sm) {
+
+        }
+        @include media-breakpoint-up(md) {
+            font-size: 2.6rem;
+        }
+        @include media-breakpoint-up(lg) {
+            font-size: 3.6rem;
+            margin-bottom: 50px;
+            margin-top: 20px;
+        }
+        @include media-breakpoint-up(xl) {
+            font-size: 3.4rem;
+        }
+        @media (min-width: 1700px) {
+            font-size: 4rem;
+        } 
+    } /* .page-title*/
+
+}
+#video-wrapper {
+
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
 #hero-video {
-    width: 100%;
-    height: 100%;
 
     opacity: 0;
     transition: opacity .8s;
 
     overflow: hidden;
     position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
 }
 
@@ -66,76 +86,94 @@ video {
 }
 
 
-@include media-breakpoint-up(sm) {
-    .hero {
-        .hero-meta {
-            font-size: 1.7em;
 
-            p {
-                font-size: .75em;
-                line-height: 1.4em;
-            }
-            h2 {
-                font-size: 1.1em;
-                margin-bottom: 10px;
+@include media-breakpoint-up(sm) {
+
+    .hero {
+
+/*        margin-bottom: 60px;*/
+
+    }
+
+} /* media-breakpoint-up(sm) */
+
+@include media-breakpoint-up(md) {
+
+    .hero {
+
+        .block-row {
+
+            .item-content {
+
             }
         }
     }
-}
+
+} /* media-breakpoint-up(md) */
 
 @include media-breakpoint-up(lg) {
-    html, body {
-        height: 100%;
-        padding: 0;
-    }
+
     .hero {
-        width: 100%;
-        height: 100%;
 
-        .hero-background {
+        .block-row {
 
-            &.image {
-                display: none;
-            }
-            &.image.loaded {
-                display: block;
-            }
+            .item-content {
 
-            &.loaded .hero-meta {
-                top: 50%;
-                opacity: 1;
+                line-height: 1.3em;
+
+                p {
+                    margin-bottom: 1rem;
+                }
             }
         }
-
-        .hero-overlay {
-/*            background: rgba(0,0,0,0.2);*/
-            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+98&0.6+0,0+90 */
-/*            background: -moz-linear-gradient(left, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 90%, rgba(0,0,0,0) 98%);
-            background: -webkit-linear-gradient(left, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 98%);
-            background: linear-gradient(to right, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 98%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', endColorstr='#00000000',GradientType=1 );*/
-        }
-        .hero-meta {
-            position: relative;
-            z-index: 0;
-            top: 50%;
-            opacity: 0;
-            transform: translateY(-50%);
-            font-size: 1.25em;
-            transition: opacity .6s, top .6s;
-
-            h1 {
-                font-size: 4em;
-                margin-bottom: 25px;
-            }
-            h2 {
-                font-size: 1.4em;
-                margin-bottom: 10px;
-            }
-            p {
-                font-size: 1em;
-            }
-        }
-
     }
-}
+
+} /* media-breakpoint-up(lg) */
+
+@include media-breakpoint-up(xl) {
+    
+    .hero {
+
+/*        margin-bottom: 60px;*/
+
+        .block-row {
+
+            .item-content {
+
+                font-size: 1.3rem;
+
+                p {
+                    margin-bottom: 1rem;
+                }
+
+                .inner {
+                    padding: 30px;
+                }
+
+                img {
+
+                    width: 30%;
+
+                }
+
+            }
+        }
+    }
+
+} /* media-breakpoint-up(xl) */
+
+@media (min-width: 1800px) {
+
+    .hero {
+
+        .block-row {
+
+            .item-content {
+
+                font-size: 1.5rem;
+
+            }
+        }
+    }
+
+} /* @media (min-width: 1800px)  */

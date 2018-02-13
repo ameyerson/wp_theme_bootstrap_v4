@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 		config: {
 		   app: 'app',
 		   dist: 'dist',
-           build: 'build/BeetleBailey',
+           build: 'build/LacesTheme',
 		},
 		bower: {
 			install: {

@@ -986,21 +986,21 @@ var Util = function ($) {
 $(document).ready(function(e) {
 
 
-    var elm = $('.hero-background')
-    var src = elm.css('background-image');
-    var url = src.match(/\((.*?)\)/)[1].replace(/('|")/g,'');
+    // var elm = $('.hero-background')
+    // var src = elm.css('background-image');
+    // var url = src.match(/\((.*?)\)/)[1].replace(/('|")/g,'');
 
-    var img = new Image();
-    img.onload = function() {
-        elm.fadeIn('slow', function() {
-            $(this).addClass('loaded');
-            $('.scroll-down-indicator').addClass('loaded');
-        });
-    }
-    img.src = url;
-    if (img.complete) img.onload();
+    // var img = new Image();
+    // img.onload = function() {
+    //     elm.fadeIn('slow', function() {
+    //         $(this).addClass('loaded');
+    //         $('.scroll-down-indicator').addClass('loaded');
+    //     });
+    // }
+    // img.src = url;
+    // if (img.complete) img.onload();
 
-    if ($('#hero-video').length > 0) { 
+    if ($('#hero-video').length > 0) { console.log('video');
 
         if (($(window).width() > 1024) && (!($('html')).hasClass('no-backgroundsize'))) {
 
@@ -1030,7 +1030,6 @@ $(document).ready(function(e) {
             $('#hero-video video').on('loadedmetadata', function() {
                 $video.css('opacity',1);
             });
-
 
             if ( ! Modernizr.objectfit ) {
                 //IE
@@ -1125,5 +1124,37 @@ function scaleVideo() {
 $(document).ready(function() {
     
     console.log('hello world');
+
+});
+$(document).ready(function(e) {
+
+    $total_time = 60;
+
+    $('.counter .data').each(function() { 
+
+        $start = parseInt($(this).attr('data-zero')); console.log($start);
+        $end = parseInt($(this).attr('data-max'));
+
+        $increment = Math.ceil(($end - $start) / $total_time); console.log($increment);
+        $(this).html(0);
+
+        var x = 60;
+        var time = 15;
+
+        for (var i = 0; i < x; i++) {
+            setTimeout(increment, i * time, $(this), $increment);
+        }
+
+    });
+
+    function increment(object, increment) {
+
+        $current_val = parseInt(object.html());
+        $new_val = $current_val + increment;
+
+        object.html($new_val);
+
+        // console.log(object.html);
+    }
 
 });
