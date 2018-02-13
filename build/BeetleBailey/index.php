@@ -6,7 +6,7 @@
 			// Start the loop.
 			while ( have_posts() ) : the_post();
 
-				get_template_part('content', 'entry');
+				get_template_part('template-parts/content', 'entry');
 
 			endwhile;
 
@@ -18,8 +18,10 @@
 				<ul class="pagination">
 				<?php 
 					$pager = paginate_links( array('type' => 'array'));
-					foreach ( $pager as $pgl ) {
-					    echo "<li >$pgl</li>";
+					if (is_array($pager)) {
+						foreach ( $pager as $pgl ) {
+					    	echo "<li >$pgl</li>";
+					    }
 					}
 				?>
 				</ul>
