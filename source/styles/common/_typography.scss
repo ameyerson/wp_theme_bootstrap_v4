@@ -12,18 +12,18 @@
     top: 2px;
 }
 
-h1, .h1,
+/*h1, .h1,
 h2, .h2,
 h3, .h3,
 h4, .h4,
 h5, .h5,
-h6, .h6 {
+h6, .h6 {*/
     
-    &.sub-heading {
-        font-family: $sub-headings-font-family;
-        font-weight: $sub-headings-font-weight;
-    }
+.sub-heading {
+    font-family: $sub-headings-font-family;
+    font-weight: $sub-headings-font-weight;
 }
+
 
 h3, .h3,
 h4, .h4,
@@ -91,12 +91,34 @@ h6, .h6 {
     }
 }
 
-.body-color {
-    color: $body-color;
-}
-.body-font {
+
+.font-body {
     font-family: $font-family-sans-serif;
     font-weight: normal;
+}
+@mixin font-body() {
+    font-family: $font-family-sans-serif;
+    font-weight: normal;
+}
+.font-lead {
+    font-family: $lead-font-family;
+    font-weight: normal;
+}
+@mixin font-lead() {
+    font-family: $lead-font-family;
+    font-weight: normal;
+}
+.font-sub-heading { 
+    font-family: $sub-headings-font-family;
+    font-weight: $sub-headings-font-weight;
+}
+@mixin font-sub-heading() { 
+    font-family: $sub-headings-font-family;
+    font-weight: $sub-headings-font-weight;
+}
+
+.color-body {
+    color: $body-color;
 }
 .color-primary {
     color: $primary;
@@ -104,9 +126,11 @@ h6, .h6 {
 .color-secondary {
     color: $secondary;
 }
-
-.page-title {
-    /*    font-size: 4rem;*/
+.color-white {
+    color: #fff;
+}
+.color-black {
+    color: #000;
 }
 .lead {
     font-family: $lead-font-family;

@@ -1092,14 +1092,9 @@ function scaleVideo() {
 
 } //function scaleVideo()
 
-
 $(document).ready(function() {
 
-
-    var elm = $('.hero-background'),
-        src = elm.css('background-image'),
-        url = src.match(/\((.*?)\)/)[1].replace(/('|")/g,''),
-        $video = false,
+    var $video = false,
         mp4 = false,
         ogg = false,
         webm = false,
@@ -1107,23 +1102,6 @@ $(document).ready(function() {
         videoMarkup = false,
         videoRatio = false;
 
-    var img = new Image();
-
-    img.onload = function() {
-        elm.fadeIn('slow', function() {
-
-            $(this).addClass('loaded');
-
-            $('.scroll-down-indicator').addClass('loaded');
-
-        });
-    };
-
-    img.src = url;
-
-    if (img.complete) {
-            img.onload();
-    }
 
     if ($('#hero-video').length > 0) { 
 
@@ -1176,6 +1154,48 @@ $(document).ready(function() {
         }
     }
 });
+// ===================================
+// Begin image-block.js
+// ===================================
+'use strict';
+
+function fadeImageBlock(elm) {
+
+    var src = elm.css('background-image'),
+        url = src.match(/\((.*?)\)/)[1].replace(/('|")/g,'');
+
+    var img = new Image();
+
+    img.onload = function() {
+        elm.fadeIn('slow', function() {
+
+            $(this).addClass('loaded');
+
+        });
+    };
+
+    img.src = url;
+
+    if (img.complete) {
+        img.onload();
+    }
+
+    return true;
+
+}
+
+$(document).ready(function() {
+    
+
+    $('.img-wrap').each(function() {
+
+        fadeImageBlock($(this));
+
+    });
+
+
+});
+    
 // Begin main.js
 // ===================================
 'use strict';
@@ -1240,38 +1260,54 @@ if (!$('html').hasClass('touch') && $(window).width() > 1199) {
 
 'use strict';
 
-$(document).ready(function() {
 
-    var $totalTime = 60,
-        $start,
-        $end,
-        $increment;
+var scrollOffset = 100,
+    totalTime = 60,
+    j = 60,
+    time = 50,
+    start,
+    end,
+    increment;
 
-    $('.counter .data').each(function() { 
+const addCommas = (x) => {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+};
+const removeCommas = (x) => {
+  return x.toString().replace(/,/g, '');
+};
 
-        $start = parseInt($(this).attr('data-zero')); console.log($start);
-        $end = parseInt($(this).attr('data-max'));
+function incrementFunction(object, increment) {
 
-        $increment = Math.ceil(($end - $start) / $totalTime); console.log($increment);
-        $(this).html(0);
+    var currentVal = parseInt(removeCommas(object.html()));
+    var newVal = currentVal + increment;
 
-        var x = 60;
-        var time = 15;
+    object.html(addCommas(newVal));
+}
 
-        for (var i = 0; i < x; i++) {
-            setTimeout(increment, i * time, $(this), $increment);
-        }
+if (!$('html').hasClass('touch') && $(window).width() > 1199) {
+    console.log('here');
+
+    $(window).on('load resize scroll', function() { 
+
+        $('.counter .data.ready').each(function() { 
+
+            if ( $(this).offset().top < $(window).scrollTop() + $(window).height() - scrollOffset ) {
+
+                start = parseInt($(this).attr('data-zero'));
+                end = parseInt($(this).attr('data-max'));
+
+                increment = Math.ceil((end - start) / totalTime);
+
+                $(this).html(0);
+
+                for (var i = 0; i < j; i++) {
+                    setTimeout(incrementFunction, i * time, $(this), increment);
+                }
+
+                $(this).removeClass('ready');
+            }
+
+        });
 
     });
-
-    function increment(object, increment) {
-
-        var $currentVal = parseInt(object.html());
-        var $newVal = $currentVal + increment;
-
-        object.html($newVal);
-
-        // console.log(object.html);
-    }
-
-});
+}

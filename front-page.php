@@ -84,9 +84,12 @@
 
                     <div class="col-sm-6">
 
-                        <div id="video-wrapper">
+                        <div id="video-wrapper" class="item-wrap img-wrap" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/tying_poster.png)">
 
-                            <div id="hero-video" class="hidden-xs hidden-sm" data-mp4 = "<?php echo get_stylesheet_directory_uri(); ?>/assets/img/tying2.mp4"></div>
+                            <div id="hero-video" class="hidden-xs hidden-sm" 
+                                data-mp4 = "<?php echo get_stylesheet_directory_uri(); ?>/assets/img/tying2.mp4" 
+                                data-poster = "<?php echo get_stylesheet_directory_uri(); ?>/assets/img/tying_poster.png">
+                            </div>
 
                         </div>
 
@@ -132,21 +135,22 @@
 
                         <div class="row">
 
-                            <div class="col-sm-4 counter">
+                            <div class="col-sm-4 counter ready">
 
                                 
-                                <span class="data" data-zero=0 data-max=17490>17,490</span>
+                                <span class="data ready" data-zero=0 data-max=17490>17,490</span>
 
-                                <i class="fa fa-heart-o"></i>
+<!--                                 <i class="fa"><img src="<?= get_stylesheet_directory_uri(); ?>/assets/img/small-shoe.png" width=70 /></i> -->
+                                <i class="fa fa-smile-o"></i>
 
                                 <p>Kids received new shoes in 2017</p>
 
                             </div>
 
-                            <div class="col-sm-4 counter">
+                            <div class="col-sm-4 counter ready">
 
                                 
-                                <span class="data" data-zero=0 data-max=60>60</span>
+                                <span class="data ready" data-zero=0 data-max=60>60</span>
 
                                 <i>%</i>
 
@@ -157,9 +161,9 @@
                             <div class="col-sm-4 counter">
 
                                 
-                                <span class="data" data-zero=0 data-max=500>500</span>
+                                <span class="data ready" data-zero=0 data-max=500>500</span>
 
-                                <i class="fa fa-smile-o"></i>
+                                <i class="fa fa-heart-o"></i>
 
                                 <p>Volunteers</p>
 
@@ -207,9 +211,107 @@
 
         </section><!-- class="main-content" -->
 
-        <section class="testimonials p-5">
 
-            <div class="container d-none d-sm-block">
+        <section class="difference full-width cta-block" style="background-image: url(<?= get_stylesheet_directory_uri(); ?>/assets/img/tryline.jpg)">    
+            <div class="difference-overlay"></div>  
+
+            <div class="difference-content"> 
+
+                <header class="section-header">
+            
+                    <div class="h1 section-title color-white">You Can Make a Difference</div>
+
+                    <div class="h2 section-sub-title color-white">in a child's life</div>
+
+                    <hr class="section-title"/>
+
+                </header><!-- class="section-header" -->
+
+                <div class="container ctas">
+
+                    <div class="row">
+
+                        <div class="col-sm-4 cta">
+
+                            <a href="#" title="Donate">
+
+                                <div class="description">       
+
+                                    <div class="primary icon-donate">
+
+                                        <h3>Donate Funds</h3>
+
+                                        <p>To purchase new shoes for a needy child.</p>
+
+                                    </div>  
+        <!--                        <a href="#" title="Donate" class="link">Donate</a>     -->
+
+                                </div>  
+                            </a>
+                        </div>
+
+
+                        <div class="col-sm-4 cta">
+
+                            <a href="#" title="Donate Shoes">
+
+                                <div class="description">   
+
+                                    <div class="white icon-donate">
+
+                                        <h3>Donate a pair</h3>
+
+                                        <p>Or 2, of new sneakers.</p>
+
+                                    </div>  
+
+                                </div>  
+
+                            </a>
+      <!--                  <a href="#" title="Donate" class="link">Donate Shoes</a>   -->  
+
+                        </div>
+
+                        <div class="col-sm-4 cta">
+
+                            <a href="#" title="Shoe Party">
+
+                                <div class="description">      
+
+                                    <div class="secondary icon-donate">
+
+                                        <h3>Give a Shoe Party</h3>
+
+                                        <p>Or hold a Shoe Drive.<br/>Invite your friends!</p>
+
+                                    </div>  
+
+                                </div>  
+
+                            </a>
+      <!--                   <a href="#" title="Donate" class="link">Shoe Party</a>   -->  
+
+                        </div>
+
+                    </div><!-- class="row" -->
+
+                </div><!-- class="container ctas" -->
+
+            </div><!-- class="difference-content" -->
+
+        </section><!-- <section class="difference full-width"> -->
+
+        <section class="testimonials">
+
+            <header class="section-header">
+
+                <div class="h2 section-sub-title color-black">In Their Own Words</div>
+
+                <hr class="section-title"/>
+
+            </header><!-- class="section-header" -->
+
+            <div class="container">
 
                 <div class="row block-row">
 
@@ -227,22 +329,10 @@
 
                 </div>
 
-            </div>
+            </div><!-- <section class="testimonials p-5"> -->
 
         </section>
 
-
-
-
-<!--                     <div class="col-sm-3">
-                        <aside class="stats">
-
-
-
-                        </aside>
-
-
-                    </div> -->
 <!--
                     <div class="col-sm-5 col-lg-4 offset-lg-1">
                         <aside>

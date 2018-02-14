@@ -1,37 +1,53 @@
 'use strict';
 
-$(document).ready(function() {
 
-    var $totalTime = 60,
-        $start,
-        $end,
-        $increment;
+var scrollOffset = 100,
+    totalTime = 60,
+    j = 60,
+    time = 50,
+    start,
+    end,
+    increment;
 
-    $('.counter .data').each(function() { 
+const addCommas = (x) => {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+};
+const removeCommas = (x) => {
+  return x.toString().replace(/,/g, '');
+};
 
-        $start = parseInt($(this).attr('data-zero')); console.log($start);
-        $end = parseInt($(this).attr('data-max'));
+function incrementFunction(object, increment) {
 
-        $increment = Math.ceil(($end - $start) / $totalTime); console.log($increment);
-        $(this).html(0);
+    var currentVal = parseInt(removeCommas(object.html()));
+    var newVal = currentVal + increment;
 
-        var x = 60;
-        var time = 15;
+    object.html(addCommas(newVal));
+}
 
-        for (var i = 0; i < x; i++) {
-            setTimeout(increment, i * time, $(this), $increment);
-        }
+if (!$('html').hasClass('touch') && $(window).width() > 1199) {
+    console.log('here');
+
+    $(window).on('load resize scroll', function() { 
+
+        $('.counter .data.ready').each(function() { 
+
+            if ( $(this).offset().top < $(window).scrollTop() + $(window).height() - scrollOffset ) {
+
+                start = parseInt($(this).attr('data-zero'));
+                end = parseInt($(this).attr('data-max'));
+
+                increment = Math.ceil((end - start) / totalTime);
+
+                $(this).html(0);
+
+                for (var i = 0; i < j; i++) {
+                    setTimeout(incrementFunction, i * time, $(this), increment);
+                }
+
+                $(this).removeClass('ready');
+            }
+
+        });
 
     });
-
-    function increment(object, increment) {
-
-        var $currentVal = parseInt(object.html());
-        var $newVal = $currentVal + increment;
-
-        object.html($newVal);
-
-        // console.log(object.html);
-    }
-
-});
+}

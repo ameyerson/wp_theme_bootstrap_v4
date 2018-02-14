@@ -79,14 +79,9 @@ function scaleVideo() {
 
 } //function scaleVideo()
 
-
 $(document).ready(function() {
 
-
-    var elm = $('.hero-background'),
-        src = elm.css('background-image'),
-        url = src.match(/\((.*?)\)/)[1].replace(/('|")/g,''),
-        $video = false,
+    var $video = false,
         mp4 = false,
         ogg = false,
         webm = false,
@@ -94,23 +89,6 @@ $(document).ready(function() {
         videoMarkup = false,
         videoRatio = false;
 
-    var img = new Image();
-
-    img.onload = function() {
-        elm.fadeIn('slow', function() {
-
-            $(this).addClass('loaded');
-
-            $('.scroll-down-indicator').addClass('loaded');
-
-        });
-    };
-
-    img.src = url;
-
-    if (img.complete) {
-            img.onload();
-    }
 
     if ($('#hero-video').length > 0) { 
 
