@@ -1,0 +1,119 @@
+.action-blocks {
+
+    .action-block {
+
+        position: relative;
+
+/*        @include grow();*/
+
+    }
+
+    & > .row {
+
+        flex-wrap: nowrap;
+        overflow: hidden;
+
+    }
+    
+    .img-wrap {
+        z-index: 2;
+    }
+
+    .action-tile {
+
+        margin: 0;
+        width: 100%;
+        position: absolute;
+
+        &.tile-left {
+            z-index: 20;
+        }
+
+        &.tile-right {
+
+            .action-content: {
+
+                right: 0;
+
+            }
+        }
+    }
+    .action-section-right {
+        margin-left: 50%;
+    }
+
+
+    .action-content {
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 15px;
+        right: 15px;
+        z-index: 20;
+
+        padding: 60px;
+
+        background-color: #f2f2f6;
+        transition: background 0.5s;
+
+        background: rgba(255,255,255,0.9);
+/*        background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0) 100%);
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,0) 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );*/
+
+        h3 {
+
+            font-family: $font-family-sans-serif;
+            color: $body-color;
+            color: #fff;
+            color: #000;
+            text-align: center;
+            transition: color 0.5s;
+        }
+
+        &:hover {
+
+            background-color: transparent;
+/*            background: rgba(255,255,255,0.99);*/
+            background: rgba(244,52,72, 0.6);
+
+            h3 {
+
+/*                color: #fff;*/
+
+            }
+
+        }
+    } /* .action-content */
+
+    .action-details {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    
+/*        position: relative;
+        margin-left: -50%;
+        z-index: 1;
+
+        transition: margin 0.5s ease-out;
+
+        &.action-rightside {
+            margin: 0;
+            margin-right: -50%;
+        }
+
+        &.open {
+            margin-left: 0;
+            margin-right: 0;
+        }*/
+        
+    
+    } /* .action-details*/
+    
+
+} /* .action-blocks */
+

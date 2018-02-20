@@ -984,6 +984,26 @@ var Util = function ($) {
 }($);
 //# sourceMappingURL=util.js.map
 // ===================================
+// Begin action-blocks.js
+// ===================================
+'use strict';
+
+$(document).ready(function() {
+    
+    $('.action-content').click(function(e) {
+
+        var target = $(this).attr('data-target');
+
+        e.preventDefault();
+
+        $(target).toggleClass('open');
+
+        return false;
+    });
+
+});
+    
+// ===================================
 // Begin fromas.js
 // ===================================
 'use strict';
@@ -1269,12 +1289,17 @@ var scrollOffset = 100,
     end,
     increment;
 
-const addCommas = (x) => {
+function addCommas(x) {
+
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-};
-const removeCommas = (x) => {
+
+}
+
+function removeCommas(x) {
+
   return x.toString().replace(/,/g, '');
-};
+
+}
 
 function incrementFunction(object, increment) {
 
@@ -1285,7 +1310,6 @@ function incrementFunction(object, increment) {
 }
 
 if (!$('html').hasClass('touch') && $(window).width() > 1199) {
-    console.log('here');
 
     $(window).on('load resize scroll', function() { 
 

@@ -8,7 +8,8 @@ $grid-breakpoints: (
   sm: 768px,
   md: 992px,
   lg: 1350px,
-  xl: 1660px
+  xl: 1660px,
+  xxl: 1800px
 );
 
 $container-max-widths: (
@@ -48,4 +49,4 @@ $sub-headings-color:                $secondary;
 $lead-font-family:        'Quattrocento', serif;
 $lead-font-weight:        300;
 $lead-color:              #000;
-$lead-size:               1.35em;
+$lead-size:               1.3em;

@@ -4,3 +4,14 @@
     background-position: center center;
     background-repeat: no-repeat;
 }
+
+@mixin grow() {
+
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+
+        transform: scale(0.96);
+
+    }
+}

@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 		config: {
 		   app: 'app',
 		   dist: 'dist',
-           build: 'build/LacesTheme',
+           build: 'package/LacesTheme',
 		},
 		bower: {
 			install: {
@@ -59,7 +59,7 @@ module.exports = function(grunt) {
 		   },
 		   dist: {
 		       options: {
-		           style: 'compact'
+		           style: 'compressed'
 		       },
 		       files: {
 		          '<%= config.dist %>/styles/main.css': 'source/styles/main.scss'
@@ -119,7 +119,7 @@ module.exports = function(grunt) {
                         'fonts/**',
                         'scripts/*.js',
 		                'scripts/vendor/*.js',
-		                'styles/*.css',
+		                // 'styles/*.css',
 		                'styles/fonts/{,*/}*.*'
 		            ]
 		        }]
@@ -160,6 +160,18 @@ module.exports = function(grunt) {
                 }]
             }
 		},
+        cssmin: {
+            dist: {
+                target: {
+                    files: [{
+                    expand: true,
+                    cwd: '<%= config.app %>/styles',
+                    src: ['*.css', '!*.min.css'],
+                    dest: '<%= config.dist %>/styles'
+                    }]
+                }
+            }
+        },
 		uglify: {
 		    dist: {
 		        files: [{
@@ -270,13 +282,16 @@ module.exports = function(grunt) {
         'concat:js',
         'sass:dist',
         'autoprefixer:dist',
+        'copy:dist',
+        // 'cssmin:dist',
+
         // 'useminPrepare',
         // 'imagemin',
-        'copy:dist',
+
         'modernizr:dist',
         'uglify',
-        // 'rev',
-        // 'usemin',
+        // // 'rev',
+        // // 'usemin',
         'usebanner'
     ]);
 

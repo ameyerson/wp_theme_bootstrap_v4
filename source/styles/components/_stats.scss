@@ -8,6 +8,7 @@
 
     .counter {
 
+        font-size: 1.15rem;
         padding: 0 30px;
 
         i {
@@ -21,4 +22,17 @@
     .data {
         font-size: 5rem;
     }
+
+
+    @include media-breakpoint-up(xl) {
+    
+        .counter {
+
+            font-size: 1.3rem;
+
+        }
+        
+    
+    } /* media-breakpoint-up(xl) */
+    
 }
