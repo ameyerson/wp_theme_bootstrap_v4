@@ -11,7 +11,7 @@ $controllers = [
 
 foreach ( $controllers as $controller ) {
     if ( ! $filepath = locate_template( $controller ) ) {
-        trigger_error( sprintf( __( 'Error locating controller %s for inclusion', 'bb_thmem' ), $controller ), E_USER_ERROR );
+        trigger_error( sprintf( 'Error locating controller %s for inclusion', $controller ), E_USER_ERROR );
     }
 
     require_once $filepath;

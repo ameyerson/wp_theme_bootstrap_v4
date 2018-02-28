@@ -1,0 +1,72 @@
+.donations {
+
+    overflow: hidden;
+    background: $gray-100;
+/*    margin-top: 160px;*/
+
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+    .donation-content {
+        padding: 15px 40px 15px;   
+    }
+    .donation-title {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    .collage-row {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .collage-wrapper {
+        padding: 0;
+    }
+    .collage {
+        @include background();
+        @include padded-box(1, 1);
+    }
+
+    @include media-breakpoint-up(md) {
+    
+        .donation-content {
+            padding: 20px 35px 20px;   
+        }
+
+    } /* media-breakpoint-up(md) */
+
+    @include media-breakpoint-up(lg) {
+    
+        .donation-content {
+            font-size: .8em;
+        }
+        .donation-title {
+            font-size: 5rem;
+            margin-bottom: 1.75rem;
+        }
+
+    } /* media-breakpoint-up(lg) */
+
+    @include media-breakpoint-up(xl) {
+    
+        margin-top: 160px;
+
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+
+        .donation-content {
+            padding: 20px 75px 20px;   
+            font-size: 1em;
+        }
+        .donation-title {
+            font-size: 6rem;
+            margin-bottom: 2.5rem;
+        }
+        .collage-row {
+            margin-left: -45px;
+            margin-right: -45px;
+        }
+    
+    } /* media-breakpoint-up(xl) */
+
+}

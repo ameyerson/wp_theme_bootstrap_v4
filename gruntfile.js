@@ -135,7 +135,9 @@ module.exports = function(grunt) {
                     'lib/**',
                     'dist/**',
                     'assets/**',
-                    'acf/**'
+                    'acf/**',
+                    'wpml/**',
+                    'template-parts/**'
                     ]
                 }]
             }

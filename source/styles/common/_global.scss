@@ -5,6 +5,12 @@
     background-repeat: no-repeat;
 }
 
+@mixin padded-box($width, $height) {
+    height: 0;
+    width: 100%;
+    padding-top: $height / $width * 100%; 
+}
+
 @mixin grow() {
 
     transition: transform 0.3s ease-in-out;

@@ -27,9 +27,6 @@
         position: relative;
         z-index: 2;
     }
-    .section-header {
-        margin-bottom: 40px;
-    }
 
     .ctas {
         max-width: 1020px;
@@ -73,25 +70,25 @@
                 position: relative;
                 z-index: 1;
 
-                background-image: url(/wp-content/themes/laces/assets/img/party-hat.png);
+                background-image: url(/wp-content/themes/LacesTheme/assets/img/party-hat.png);
 
                 @include grow();
 
 
                 &.primary {
 
-                    background-image: url(/wp-content/themes/laces/assets/img/piggy.png);
+                    background-image: url(/wp-content/themes/LacesTheme/assets/img/piggy.png);
 
                     &:after {
 
-                        background-image: url('/wp-content/themes/laces/assets/img/cta_primary.png');
+                        background-image: url('/wp-content/themes/LacesTheme/assets/img/cta_primary.png');
 
                     }
                 }
 
                 &.white {
 
-                    background-image: url(/wp-content/themes/laces/assets/img/shoes-icon.png);
+                    background-image: url(/wp-content/themes/LacesTheme/assets/img/shoes-icon.png);
                     color: #000;
 
                 }
@@ -100,7 +97,7 @@
 
                     &:after {
 
-                        background-image: url('/wp-content/themes/laces/assets/img/cta_secondary.png');
+                        background-image: url('/wp-content/themes/LacesTheme/assets/img/cta_secondary.png');
 
                     }
                 }
@@ -117,7 +114,7 @@
                     background-size: 420px 420px;
                     background-position: center -140px;
 
-                    background-image: url('/wp-content/themes/laces/assets/img/cta_white.png');
+                    background-image: url('/wp-content/themes/LacesTheme/assets/img/cta_white.png');
 
                 }
 

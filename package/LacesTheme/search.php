@@ -4,7 +4,7 @@
 
 			<header class="page">
 				<div class="container">
-					<h1><?php printf( __( 'Search Results for: %s', 'bb-theme' ), get_search_query() ); ?></h1>
+					<h1><?php printf( __( 'Search Results for: %s', 'laces-theme' ), get_search_query() ); ?></h1>
 				</div>
 			</header><!-- .page-header -->
 

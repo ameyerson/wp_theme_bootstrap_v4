@@ -149,6 +149,14 @@ add_theme_support( 'html5', array(
 
 // add_filter( 'jpeg_quality', create_function( '', 'return 80;' ) );
 
+add_filter('body_class', 'append_language_class');
+
+function append_language_class($classes){
+
+  $classes[] = ICL_LANGUAGE_CODE;  //or however you want to name your class based on the language code
+  return $classes;
+  
+}
 
 
 /**

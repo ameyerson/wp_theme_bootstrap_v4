@@ -1,100 +1,14 @@
 <?php
 
     get_header(); 
+
 ?>
 
 <?php if ( have_posts() ) : ?>
 
     <?php while ( have_posts() ) : the_post(); ?>
 
-        <?php //get_template_part('template-parts/hero'); ?>
-
-        <section class="hero">
-
-            <div class="container">
-
-                <div class="row block-row">
-
-                    <div class="col-sm-6 col-lg-4">
-
-                        <div class="item-wrap item-border">
-                            
-                            <div class="item-content">
-
-                                <div class="inner">
-
-                                    <p>Over 26,500 kids in Collier County public schools are designated "economically needy."</p>
-
-                                    <p>The children who receive <span class="color-primary">Laces of Love</span> shoes are among these kids.</p>
-
-                                    <div class="text-center">
-
-                                        <a href="#" class="scale-up">
-
-                                            <img src="<?= get_stylesheet_directory_uri(); ?>/assets/img/Donate_Heart.png" width=120 height=142/>
-
-                                        </a>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div><!-- item -->
-
-                    </div><!-- col -->
-
-                    <div class="col-sm-6 col-lg-4">
-
-                        <div class="item-wrap img-wrap" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gg.jpg)"></div>
-                            
-                    </div><!-- col -->
-
-                    <div class="col-sm-4 d-none d-lg-block">
-
-                        <div class="item-wrap img-wrap" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/ty.jpg)"></div>
-
-                    </div><!-- col -->
-
-                </div><!-- row -->
-
-            </div>
-
-            <div class="container">
-
-                <h1 class="text-center page-title">Laces of Love has provided over 120,000 pairs <br class="d-none d-sm-block d-xl-none">of new shoes to needy kids in SWFL</h1>
-
-            </div>
-
-            <div class="container d-none d-sm-block">
-
-                <div class="row block-row">
-
-                    <div class="col-sm-6">
-
-                        <div class="item-wrap img-wrap" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/b.jpg)"></div>
-
-                    </div><!-- col -->
-
-                    <div class="col-sm-6">
-
-                        <div id="video-wrapper" class="item-wrap img-wrap" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/tying_poster.png)">
-
-                            <div id="hero-video" class="hidden-xs hidden-sm" 
-                                data-mp4 = "<?php echo get_stylesheet_directory_uri(); ?>/assets/img/tying2.mp4" 
-                                data-poster = "<?php echo get_stylesheet_directory_uri(); ?>/assets/img/tying_poster.png">
-                            </div>
-
-                        </div>
-
-                    </div><!-- col -->
-
-                </div><!-- row -->
-
-            </div>
-
-        </section><!-- class="hero" -->
+        <?php get_template_part('template-parts/hero'); ?>
 
         <section class="main-content">
 
@@ -207,7 +121,7 @@
         </section><!-- class="main-content" -->
 
 
-        <section class="difference full-width cta-block" style="background-image: url(<?= get_stylesheet_directory_uri(); ?>/assets/img/tryline.jpg)">   
+        <section class="difference full-width cta-block dark-section" style="background-image: url(<?= get_stylesheet_directory_uri(); ?>/assets/img/tryline.jpg)">   
 
             <div class="difference-overlay"></div>  
 
@@ -294,68 +208,79 @@
 
         </section><!-- <section class="difference full-width"> -->
 
-        <section class="testimonials action-blocks">
+        <section class="testimonials">
 
-                <div class="block-row">
+            <div class="container">
 
-                    <div class="row action-tile tile-left">
+                <header class="section-header">
+                
+                    <div class="h2 section-sub-title color-body">Helping a Mother in Need</div>
 
-                        <div class="action-section-left col-sm-6">
+                    <hr class="section-title"/>
 
-                            <div class="item-wrap img-wrap" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/pile.jpg)"></div>
+                </header><!-- class="section-header" -->
 
-                            <div class="action-content" data-target="#where">
-
-                                <h3>Where do our shoes go?</h3>
-                                <hr class="section-title">
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="action-details col-sm-6 action-rightside" id="story">
-
-                            <p>We recently received this letter from a mother who really needed Laces support.</p>
-
-
-                        </div><!-- class="action-details" -->
-
-                    </div><!-- <div class="action-tile"> -->
-
-
-                    <div class="row action-tile tile-right">
-
-                        <div class="action-details col-sm-6" id="where">
-
-                            <p>Did you ever wonder where all our shoes go?  With so many children in need, Laces of Love has partnered with a long list of organizations to ensure the kids who need our shoes get them.  We couldn’t reach them with out the help of the following organizations.</p>
-                            <p>Laces of Love has partnered for MANY years with the following organizations:</p>
-
-
-                        </div><!-- class="action-details" -->
-
-                        <div class="action-section-right col-sm-6">
-
-                            <div class="item-wrap img-wrap " style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/pile.jpg)"></div>
-
-                            <div class="action-content" data-target="#story">
-
-                                <h3>Helping a Mother in Need</h3>
-                                <hr class="section-title">
-
-                            </div>
-
-                        </div><!-- class="action-content" -->
+                <div class="row">
                     
-                    </div><!-- <div class="action-tile"> -->
+                    <div class="col-xxl-10 offset-xxl-1">
+                        
+                        <p class="mb-5">We recently received this letter from a mother who really needed Laces support.</p>
+                    
+                    </div>
 
+                    <div class="col-xxl-10 offset-xxl-1">
 
-            </div><!-- class="action-wrapper" -->
+                        <blockquote>
+
+                            <p>As a working mother, I have always taken comfort in the fact that I can provide for my children. I am usually the one donating my time and money to organizations that help others.  So it was very hard for me to admit that I needed help when things got rough. At a point in my life where we were struggling to even feed our kids or keep gas in the car, it broke my heart when my son came to me telling me his shoes hurt – they were too small and falling apart. They were the only ones he had. </p>
+
+                            <img src="<?= get_stylesheet_directory_uri(); ?>/assets/img/newshoes.png" width=200 />
+
+                            <p>What do I do? I desperately needed to get my son new sneakers.  I needed help. Thank you Laces of Love for getting my son new shoes. He was overjoyed and even thinks they hold special powers to make him run faster. Maybe they do – anything is possible with love.  You helped make this hard time a little less difficult and I will forever be grateful.</p>                           
+
+                        </blockquote>
+
+                    </div>
+
+                </div><!-- <div class="row"> -->
+
+            </div>
 
         </section><!-- <section class="testimonials"> -->
+
+
+        <section class="donations full-width">
+
+                <div class="row align-items-center collage-row">
+
+                    <div class="col-lg-6 donation-content">
+
+                        <div class="donation-title h1">Thank You!</div>
+
+                        <p>Thank you for learning more about Laces of Love and our mission of making sure no child *this should be somewhat different from above*. With your help, we can continue to eleifend nulla eu nibh accumsan, a malesuada odio euismod.</p>
+                        <p>To find out more about <a href="#">where our shoes go</a>, please visit our <a href="#">How We Work</a> page.</p>
+
+                        <p class="small mt-4">Laces of Love is a US tax-exempt 501(c)(3) non-profit organization (Tax ID Number: #####). Your gift is tax-deductible as allowed by law.</p>
+                        <p class="small"><a href="#">Click here for our 2016 annual report.</a></p>
+
+                    </div>
+
+                    <div class="col-lg-6 collage-wrapper">
+
+                        <div class="collage" style="background-image: url(<?= get_stylesheet_directory_uri(); ?>/assets/img/collage.png)"></div>
+
+                    </div>
+
+                </div>
+
+        </section><!-- <section class="donations"> -->
 
         <?php get_footer(); ?>
 
     <?php endwhile; ?>
 
 <?php endif; ?>
+
+<!-- Khan Academy is a US tax-exempt 501(c)(3) non-profit organization (Tax ID Number: 26‑1544963). Your gift is tax-deductible as allowed by law.
+
+To learn more about our generous donors, please visit our Supporters page. Click here for our 2016 annual report. -->

@@ -5,7 +5,7 @@ if ( ! function_exists( 'bb_excerpt_more' ) && ! is_admin() ) {
 	function bb_excerpt_more( $more ) {
 
 		global $post;
-		return '<a class="moretag" href="'. get_permalink($post->ID) . '"> ' .  __( 'Read More', 'bb-theme' ) . '</a>';
+		return '<a class="moretag" href="'. get_permalink($post->ID) . '"> ' .  __( 'Read More', 'laces-theme' ) . '</a>';
 
 	}
 	add_filter( 'excerpt_more', 'bb_excerpt_more' );
@@ -24,7 +24,7 @@ if ( ! function_exists( 'get_bb_post_navigation' ) && ! is_admin() ) {
 				'prev_text'          => '%title',
 				'next_text'          => '%title',
 				'wrapper_class'		 =>  'pager',
-				'screen_reader_text' => __( 'Post navigation', 'bb-theme' ),
+				'screen_reader_text' => __( 'Post navigation', 'laces-theme' ),
 		) );
 
 		$navigation = '';
@@ -73,7 +73,7 @@ if ( ! function_exists( 'bb_post_meta' ) && ! is_admin() ) {
 		$tags_list = get_the_tag_list('', ' ', '');
 
 		if ( $categories_list ) {
-			$meta_markup .= __('Posted in', 'bb-theme') . ': ' . $categories_list;
+			$meta_markup .= __('Posted in', 'laces-theme') . ': ' . $categories_list;
 		}
 
 		if ($categories_list && $tags_list) {
@@ -81,7 +81,7 @@ if ( ! function_exists( 'bb_post_meta' ) && ! is_admin() ) {
 		}
 
 		if ( $tags_list ) {
-			$meta_markup .= __('Tagged with ', 'bb-theme') . ': ' . $tags_list;
+			$meta_markup .= __('Tagged with ', 'laces-theme') . ': ' . $tags_list;
 		}
 		$meta_markup .= '</div>';
 
@@ -108,13 +108,13 @@ if ( ! function_exists( 'get_bb_breadcrumbs' ) && ! is_admin() ) {
 		$args = wp_parse_args( $args, array(
 				'breadcrumb_class'	=>  'breadcrumb',
 				'active_class'		=> 	'active',
-				'home_text' 		=> __('Home', 'bb-theme' ),
-				'category_text' 	=> __('Archives for %s', 'bb-theme'),
-				'tag_text' 			=> __('Posts tagged %s', 'bb-theme'),
-				'author_text' 		=> __('Posted by %s', 'bb-theme'),
-				'search_text' 		=> __('Search results for \'%s\'', 'bb-theme'),
-				'paged_text' 		=> __('Page %s', 'bb-theme'),
-				'404_text' 			=> __('Error 404', 'bb-theme'),
+				'home_text' 		=> __('Home', 'laces-theme' ),
+				'category_text' 	=> __('Archives for %s', 'laces-theme'),
+				'tag_text' 			=> __('Posts tagged %s', 'laces-theme'),
+				'author_text' 		=> __('Posted by %s', 'laces-theme'),
+				'search_text' 		=> __('Search results for \'%s\'', 'laces-theme'),
+				'paged_text' 		=> __('Page %s', 'laces-theme'),
+				'404_text' 			=> __('Error 404', 'laces-theme'),
 				'link_structure'	=> '<li class="breadcrumb-item"><a href="%1$s">%2$s</a></li>',
 				'current_structure'	=> '<li class="breadcrumb-item active">%s</li>'
 				

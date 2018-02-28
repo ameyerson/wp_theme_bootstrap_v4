@@ -11,7 +11,7 @@ function theme_customizer_register($wp_customize) {
 
 	//Header
 	$wp_customize->add_section( 'theme_customizer_header', array(
-		'title' => __( 'Global Header', 'section' ),
+		'title' => 'Global Header',
 		'priority' => 10
 	) );
 	$wp_customize->add_setting( 'theme_customizer_logo', array(

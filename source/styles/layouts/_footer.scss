@@ -1,1 +1,40 @@
 
+#main-footer {
+
+    background: $gray-600;
+    margin-top: -80px;
+    margin-bottom: 0;
+
+    color: $gray-500;
+
+    h2,
+    h3 {
+        color: #fff;
+    }
+
+    a {
+        color: #fff;
+    }
+    
+    p {
+        font-size: 0.7em;
+    }
+
+    .footer-nav {
+
+        display: inline-block;
+        padding: 0;
+        margin: 25px auto 10px;
+        list-style: none;
+        font-size: 0.8em;
+
+        li {
+
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 0 10px;
+        }
+    }
+
+} /* #main-footer */
+

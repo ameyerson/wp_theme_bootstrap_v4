@@ -1,15 +1,99 @@
 .testimonials {
 
-
     margin-top: 45px;
 
+    img {
 
+        max-width: 100%;
 
+    }
 
-    @include media-breakpoint-up(md) {
+    blockquote {
 
-        margin-top: 120px;
+        img {
+
+            display: none;
+
+        }
+
+    }
+
+    @include media-breakpoint-up(sm) {
+
 
     } /* media-breakpoint-up(sm) */
 
+    @include media-breakpoint-up(lg) {
+
+        margin-top: 120px;
+
+        blockquote {
+
+            p:first-of-type {
+             
+                float: left;   
+                padding-right: 240px;
+                min-height: 200px;
+
+            }
+
+            img {
+
+                display: block;
+                float: right;
+                margin-left: -291px;
+            
+            }
+
+        }
+
+    } /* media-breakpoint-up(lg) */
+
 } /* .testimonials */
+
+blockquote {
+
+    font-size: 0.9em;
+    line-height: 1.5em;
+    font-style: italic;
+    margin: 0;
+    margin-right: 1em;
+    font-style: italic;
+    padding: .5em 0px .5em 15px;
+    border-left: 2px solid $secondary;
+    line-height:1.6;
+    position: relative;
+/*    background: $light-bkg;*/
+
+}
+
+
+@include media-breakpoint-up(sm) {
+
+    blockquote {
+
+        border-left: 8px solid $secondary;
+        padding: 1.2em 30px 1.2em 75px;
+        margin-right: 1em;
+
+    }
+
+    blockquote::before{
+
+      font-family: $sub-headings-font-family;
+      content: "\201C";
+      color: $secondary;
+      font-size:4em;
+      position: absolute;
+      left: 10px;
+      top:-10px;
+
+    }
+    blockquote::after{
+
+      content: '';
+
+    }
+
+} /* media-breakpoint-up(sm) */
+

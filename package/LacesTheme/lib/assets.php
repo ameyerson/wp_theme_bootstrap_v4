@@ -7,7 +7,7 @@ $hostname = $_SERVER['SERVER_NAME'];
 
 //VERIFY WHICH ENVIRONMENT THE APP IS RUNNING
 switch ($hostname) {
-    case 'lacesx.local':
+    case 'laces.local':
         define('WP_ENV', 'development');
         define('WP_DEBUG', true);
         break;

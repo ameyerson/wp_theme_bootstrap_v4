@@ -24,7 +24,7 @@ foreach ($theme_includes as $file) {
 
     if (!$filepath = locate_template($file)) {
 
-        trigger_error(sprintf(__('Error locating %s for inclusion', 'bb_theme'), $file), E_USER_ERROR);
+        trigger_error(sprintf('Error locating %s for inclusion', $file), E_USER_ERROR);
 
     }
 
