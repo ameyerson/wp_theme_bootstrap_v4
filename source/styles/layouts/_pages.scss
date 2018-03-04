@@ -11,7 +11,7 @@ section,
 .section-header {
     margin-bottom: 40px;
 }
-.section-title {
+/*.section-title {
     @include font-lead();
     font-size: 2.8rem;
     margin-bottom: 20px;
@@ -32,7 +32,7 @@ hr.section-title {
     border-color: $primary;
     border-width: 2px;
     width: 200px;
-}
+}*/
 
 .full-width {
 
@@ -67,12 +67,12 @@ hr.section-title {
         margin-bottom: 80px;
         position: relative;
     }
-    .section-title {
+/*    .section-title {
         font-size: 4.5rem;
     }
     .section-sub-title {
         font-size: 1.2rem;
-    }
+    }*/
 
 } /* media-breakpoint-up(sm) */
 
@@ -106,10 +106,7 @@ hr.section-title {
 
 } /* media-breakpoint-up(lg) */
 
-main {
-/*    padding-bottom: 20px;
-    padding-top: 20px;*/
-}
+
 /*aside.corner {
 
     font-size: .8em;

@@ -2,10 +2,13 @@
 #main-footer {
 
     background: $gray-600;
-    margin-top: -80px;
     margin-bottom: 0;
+    margin-top: 80px;
+    padding: 0;
 
-    color: $gray-500;
+    border-top: 8px solid darken($secondary, 8%);
+
+    
 
     h2,
     h3 {
@@ -20,21 +23,98 @@
         font-size: 0.7em;
     }
 
+    div#footer-nav {
+        width:100%;
+    }
+
     .footer-nav {
 
-        display: inline-block;
-        padding: 0;
-        margin: 25px auto 10px;
+        @include clearfix();
+
+/*        display: inline-block;*/
+        width: 100%;
+        padding: 80px 0 40px;
+        margin: 0px auto;
         list-style: none;
-        font-size: 0.8em;
+        text-align: center;
 
-        li {
+        & > li {
+            
+            margin: 0;         
+            padding: 0px 20px;
 
+            & > a {
+                display: block;
+                margin-bottom: 10px;
+                font-size: 1.5em;
+                font-family: $headings-font-family;
+            }        
+        }
+
+        .sub-menu {
+            font-size: 0.9em;
+            padding: 0;
+            margin-bottom: 40px;
+        }
+
+        .sub-menu li {
+            color: $primary;
+            list-style: none;
+            padding: 5px 20px;
+
+            a {
+                font-size: 0.9em;
+            }
+        }
+
+        small {
             display: inline-block;
-            padding: 5px 10px;
-            margin: 0 10px;
+            padding: 0 1em 1em;
+            color: $gray-300;
+            border-bottom: 2px solid $secondary;
+            margin-bottom: 1rem;
+            max-width: 300px;
         }
     }
+
+    .colophon {
+
+        background: darken($gray-600, 4%);
+        padding: 2rem 15px;
+        color: $gray-300;
+
+        img {
+            margin: 20px 0;
+        }
+
+        p {
+            margin: 0;
+        }
+
+    }
+
+    @include media-breakpoint-up(sm) {
+
+        .footer-nav {
+
+            padding: 80px 0 40px;
+
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+
+            & > li {
+                
+                margin: 0;
+                -webkit-box-flex: 0;
+                flex: 0 0 33.33333%;
+                max-width: 33.3333%;            
+                padding: 0px 20px;    
+            }
+
+        }
+        
+    } /* media-breakpoint-up(sm) */
 
 } /* #main-footer */
 

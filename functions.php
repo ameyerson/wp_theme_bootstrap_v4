@@ -16,6 +16,7 @@ $theme_includes = [
     'lib/search-controller.php', //advanced custom fields
     'lib/template-tags.php', //
     'lib/wp_bootstrap_navwalker.php', //nav walker
+    'lib/wp_description_walker.php', //nav walker
     'lib/wysiwyg.php', //custom wysiwyg formats
 
 ];

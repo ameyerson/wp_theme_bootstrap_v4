@@ -16,7 +16,8 @@ function theme_setup() {
   add_theme_support( 'menus' );
   register_nav_menu( 'primary', 'Primary Navigiation' );
   register_nav_menu( 'secondary', 'Secondary Navbar' );
-  register_nav_menu( 'footer-1', 'Footer' );
+  register_nav_menu( 'footer', 'Footer' );
+  register_nav_menu( 'sub-footer', 'Sub Footer' );
 
 // Enable post thumbnails
 // http://codex.wordpress.org/Post_Thumbnails
@@ -125,12 +126,6 @@ function bb_widgets_init() {
     'after_title'   => '</h4>',
   ) );
 }
-
-// ******************* Add Custom Menus ****************** //
-
-add_theme_support( 'menus' );
-register_nav_menu( 'primary', 'Primary Navigiation' );
-
 
 // ******************* Add Post Thumbnails ****************** //
 

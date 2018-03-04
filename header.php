@@ -26,15 +26,17 @@
 		    	</button>
 
 			    <?php
-	                wp_nav_menu( array(
-	                    'theme_location'    => 'primary',
-	                    'depth'             => 0,
-	                    'container'         => 'div',
-	                    'container_class'   => '',
-	                    'container_id'      => 'navbarSupportedContent',
-	                    'menu_class'        => 'nav navbar-nav',
-	                    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-	                    'walker'            => new WP_Bootstrap_Navwalker())
+	                wp_nav_menu( 
+	                	array(
+		                    'theme_location'    => 'primary',
+		                    'depth'             => 0,
+		                    'container'         => 'div',
+		                    'container_class'   => '',
+		                    'container_id'      => 'navbarSupportedContent',
+		                    'menu_class'        => 'nav navbar-nav',
+		                    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+		                    'walker'            => new WP_Bootstrap_Navwalker()
+	                	)
 	                );
 			    ?>
 
