@@ -96,10 +96,10 @@ add_action( 'login_enqueue_scripts', 'bb_login_styles' );
 function bb_login_styles() { ?>
     <style type="text/css">
         body.login div#login h1 a {
-            background-image: url(<?php echo get_theme_mod('theme_customizer_logo') ?>);
-            background-size: 200px;
-            height: 200px;
-            width: 200px;
+            background-image: url(<?php echo get_theme_mod('theme_customizer_horiz_logo') ?>);
+            background-size: contain;
+            height: 75px;
+            width: 320px;
         }
     </style>
 <?php }

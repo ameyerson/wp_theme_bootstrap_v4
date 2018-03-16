@@ -6,9 +6,9 @@ $(document).ready(function() {
     
     console.log('hello world');
 
-    $(".mobile-select select").change(function() {
+    $('.mobile-select select').change(function() {
 
-        window.location = "/?page_id=" + $(this).find("option:selected").val();
+        window.location = '/?page_id=' + $(this).find('option:selected').val();
 
     });
 

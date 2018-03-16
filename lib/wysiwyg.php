@@ -69,6 +69,21 @@ function bb_before_init_insert_formats( $init_array ) {
             'selector' => 'a',  
             'classes' => 'btn btn-default'
         ),
+        array(  
+            'title' => 'Two Column List',  
+            'selector' => 'ul',  
+            'classes' => 'two-col-list'
+        ),
+        array(  
+            'title' => 'Image Shadow',  
+            'selector' => 'img',  
+            'classes' => 'shadow-image shadow-image-tertiary'
+        ),
+        array(  
+            'title' => 'Secondary Brand Color',  
+            'selector' => 'p',  
+            'classes' => 'color-secondary'
+        ),
 
     );  
 

@@ -217,7 +217,7 @@
 
                 <header class="section-header">
                 
-                    <div class="h2 section-sub-title color-body">Helping a Mother in Need</div>
+                    <div class="h2 section-sub-title color-black">Helping a Mother in Need</div>
 
                     <hr class="section-title"/>
 
@@ -225,13 +225,13 @@
 
                 <div class="row">
                     
-                    <div class="col-xxl-10 offset-xxl-1">
+                    <div class="cl-lg-11 col-xxl-10 offset-xxl-1">
                         
                         <p class="mb-5">We recently received this letter from a mother who really needed Laces support.</p>
                     
                     </div>
 
-                    <div class="col-xxl-10 offset-xxl-1">
+                    <div class="col-lg-11 col-xxl-10 offset-xxl-1">
 
                         <blockquote>
 
@@ -260,8 +260,8 @@
 
                         <div class="donation-title h1">Thank You!</div>
 
-                        <p>Thank you for learning more about Laces of Love and our mission of making sure no child *this should be somewhat different from above*. With your help, we can continue to eleifend nulla eu nibh accumsan, a malesuada odio euismod.</p>
-                        <p>To find out more about <a href="#">where our shoes go</a>, please visit our <a href="#">How We Work</a> page.</p>
+                        <p>Thank you for taking the time to learn more about Laces of Love and our mission of making sure no child *this should be somewhat different from above*. With your help, we can continue to eleifend nulla eu nibh accumsan, a malesuada odio euismod.</p>
+                        <p>To find out more about <a href="#">where our shoes go</a>, please visit our <a href="#">What We Do</a> page.</p>
 
                         <p class="small mt-4">Laces of Love is a US tax-exempt 501(c)(3) non-profit organization (Tax ID Number: #####). Your gift is tax-deductible as allowed by law.</p>
                         <p class="small"><a href="#">Click here for our 2016 annual report.</a></p>
@@ -283,7 +283,3 @@
     <?php endwhile; ?>
 
 <?php endif; ?>
-
-<!-- Khan Academy is a US tax-exempt 501(c)(3) non-profit organization (Tax ID Number: 26‑1544963). Your gift is tax-deductible as allowed by law.
-
-To learn more about our generous donors, please visit our Supporters page. Click here for our 2016 annual report. -->

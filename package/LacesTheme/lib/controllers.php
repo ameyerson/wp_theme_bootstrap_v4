@@ -6,7 +6,8 @@
  */
 $controllers = [
     'lib/controllers/parts/hero.php', // hero data
-    'lib/controllers/parts/title.php', // hero title
+    'lib/controllers/parts/banner.php', // banner
+    'lib/controllers/parts/page-section.php', // page section
 ];
 
 foreach ( $controllers as $controller ) {

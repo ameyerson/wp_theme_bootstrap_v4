@@ -1,5 +1,13 @@
 
             <footer id="main-footer" class="full-width text-center">
+
+                <header class="section-header container-fluid">
+                
+                    <div class="h2 section-sub-title color-black">Find out how you can...</div>
+
+                    <hr class="section-title"/>
+
+                </header><!-- class="section-header" -->
                 
                 <div class="container clearfix">
                     
@@ -35,7 +43,7 @@
 
                     <img src="<?= get_stylesheet_directory_uri(); ?>/assets/img/logo-white.png" alt="Laces of Love" width=150 />
 
-                    <p class="small">&copy; <?= date('Y') ?> Laces of Love. | 1900 Gulf Shore Blvd. North, #402 | Naples FL  <a href="#"><?php _e('Privacy Policy', 'laces-theme') ?></a></p>
+                    <p class="small">&copy; <?= date('Y') ?> Laces of Love. | 1900 Gulf Shore Blvd. North, #402 | Naples FL   <a href="#"><?php _e('Privacy Policy', 'laces-theme') ?></a></p>
 
                 </div>
 

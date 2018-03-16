@@ -51,6 +51,7 @@
 
             p {
                 @include font-lead();
+                color: #fff;
                 line-height: 1.2em;
                 font-size: .9em;
                 max-width: 75%;
@@ -90,6 +91,10 @@
 
                     background-image: url(/wp-content/themes/LacesTheme/assets/img/shoes-icon.png);
                     color: #000;
+
+                    p {
+                        color: #000;
+                    }
 
                 }
 

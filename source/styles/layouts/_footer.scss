@@ -1,22 +1,59 @@
 
 #main-footer {
 
-    background: $gray-600;
     margin-bottom: 0;
-    margin-top: 80px;
     padding: 0;
+    padding-top: 80px;
+    border-top: 1px solid $light-bkg;
 
-    border-top: 8px solid darken($secondary, 8%);
+    font-size: 0.9em;
 
-    
-
+   
     h2,
     h3 {
-        color: #fff;
+        color: #000;
     }
 
     a {
-        color: #fff;
+        color: #000;
+        text-transform: uppercase;
+        text-decoration: none !important;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+        line-height: 1em;
+        margin: 4px 0;
+        padding-top: .35rem;
+        padding-bottom: .35rem;
+        font-size: .9em;
+
+        &:after {
+
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 0px;
+            background: $primary;
+            content: '';
+            opacity: 0;
+            transition: height .3s,opacity .3s,-webkit-transform .3s;
+            -moz-transition: height .3s,opacity .3s,-moz-transform .3s;
+            transition: height 0.3s, opacity 0.3s, transform 0.3s;
+            -webkit-transform: translateY(3px);
+            -moz-transform: translateY(3px);
+            transform: translateY(3px);
+
+        }
+
+        &:hover:after {
+            height: 2px;
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            transform: translateY(0);
+
+        }
     }
     
     p {
@@ -33,45 +70,56 @@
 
 /*        display: inline-block;*/
         width: 100%;
-        padding: 80px 0 40px;
+        padding: 0px 0 40px;
         margin: 0px auto;
         list-style: none;
-        text-align: center;
+
 
         & > li {
             
-            margin: 0;         
-            padding: 0px 20px;
+            margin: 0 20px;         
+            padding: 0px 15px 15px;
+/*            border: 1px solid $body-color;*/
 
             & > a {
                 display: block;
                 margin-bottom: 10px;
                 font-size: 1.5em;
                 font-family: $headings-font-family;
+                color: darken($secondary, 15%);
+
+                &:after {
+                    display: none;
+                }
+                &:hover {
+                    color: $primary;
+                }
             }        
         }
 
         .sub-menu {
             font-size: 0.9em;
             padding: 0;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         .sub-menu li {
-            color: $primary;
             list-style: none;
-            padding: 5px 20px;
+            padding: 5px 0px;
 
             a {
+                text-transform: uppercase;
+                font-weight: 700;
                 font-size: 0.9em;
+                color: $body-color;
             }
         }
 
         small {
             display: inline-block;
-            padding: 0 1em 1em;
-            color: $gray-300;
-            border-bottom: 2px solid $secondary;
+            padding: 0 0 1em;
+            color: $gray-700;
+            border-bottom: 1px solid $gray-300;
             margin-bottom: 1rem;
             max-width: 300px;
         }
@@ -82,26 +130,35 @@
         background: darken($gray-600, 4%);
         padding: 2rem 15px;
         color: $gray-300;
+        margin-top: 40px;
 
         img {
-            margin: 20px 0;
+            margin: 20px auto;
         }
 
         p {
             margin: 0;
         }
+        a {
+            color: $gray-200;
 
+            &:hover {
+                color: #fff;
+            }
+        }
     }
 
     @include media-breakpoint-up(sm) {
 
+        font-size: 0.9em;
+
         .footer-nav {
 
-            padding: 80px 0 40px;
+            padding: 0px 0px 40px;
+            max-width: 1260px;
 
             display: flex;
             flex-wrap: wrap;
-            text-align: center;
 
             & > li {
                 
@@ -109,12 +166,17 @@
                 -webkit-box-flex: 0;
                 flex: 0 0 33.33333%;
                 max-width: 33.3333%;            
-                padding: 0px 20px;    
             }
 
         }
         
     } /* media-breakpoint-up(sm) */
+
+    @include media-breakpoint-up(lg) {
+
+        font-size: 1em;
+        
+    } /* media-breakpoint-up(lg) */
 
 } /* #main-footer */
 

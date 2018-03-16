@@ -2,12 +2,13 @@
 
     .section-title {
         @include font-lead();
+        color: #fff;
         font-size: 2.8rem;
         margin-bottom: 20px;
         text-align: center;
     }
 
-    .section-sub-title {
+/*    .section-sub-title {
         @include font-body();
         font-size: 1.05rem;
         margin-top: 10px;
@@ -17,27 +18,49 @@
         text-align: center;
     }
     hr.section-title {
-
         border-color: $primary;
         border-width: 2px;
         width: 200px;
+    }*/
+    .home-hero {
+        margin-top: 30px;
     }
 
     #main-footer {
-
-        margin-top: -80px;
-
+        margin-top: -40px;
     }
 
     @include media-breakpoint-up(md) {
 
-        .section-title {
-            font-size: 4.5rem;
+        #wrapper {
+            padding: 30px 15px 0px;
+            margin-left: 240px;
         }
-        .section-sub-title {
-            font-size: 1.2rem;
+
+        #main-footer {
+            margin-top: -80px;
         }
 
     } /* media-breakpoint-up(sm) */
+
+    @include media-breakpoint-up(lg) {
+
+        .section-title {
+            font-size: 4rem;
+        }
+
+    } /* media-breakpoint-up(lg) */
+
+
+    @include media-breakpoint-up(xl) {
+
+        #wrapper {
+
+            padding: 30px 45px 0px;
+            margin-left: 300px;
+
+        }
+
+    } /* media-breakpoint-up(xl) */
 
 } /* .page-template-template-home */

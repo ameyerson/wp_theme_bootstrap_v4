@@ -3,22 +3,56 @@
 // ===================================
 'use strict';
 
+function scrollToDiv(target) {
+
+    $('html, body').animate(
+        {
+            scrollTop: $(target).offset().top - 100
+        }, 
+        600
+    );
+
+}
+
 $(document).ready(function() {
 
-    $('.scroll-down-indicator').click(function(e) {
+    $('.scroll-to-link').click(function(e) {
 
         var $target = $(this).attr('href');
 
         e.preventDefault();
 
-        $target = $(this).attr('href');
-        $('html, body').animate(
-            {
-                scrollTop: $($target).offset().top - 180
-            }, 
-            600, 
-            'easeInOutCubic'
-        );
+        scrollToDiv($target);
+
+    });    
+
+    $('#menu-footer a').click(function(e) {
+
+
+
+        var $target = $(this).attr('href');
+        var $hash = '#' + $target.split('#')[1];
+
+        $('.scroll-to-link').each(function(){
+
+            if ($(this).attr('href') === $hash) {
+
+                e.preventDefault();
+                $(this).click();
+            }
+
+        });
+
+    });
+
+
+    var match = location.hash.match(/^#?(.*)$/)[1];
+    $('.scroll-to-link').each(function(){
+
+        if ($(this).attr('href') === '#' + match) {
+            $(this).click();
+        }
+
     });
 
 });

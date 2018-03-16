@@ -35,4 +35,14 @@ foreach ($theme_includes as $file) {
 unset($file, $filepath);
 
 
+function my_acf_admin_head() {
+    ?>
+    <style type="text/css">
 
+     .acf-range-wrap input[type="number"] {width: 80px !important;}
+
+    </style>
+    <?php
+}
+
+add_action('acf/input/admin_head', 'my_acf_admin_head');

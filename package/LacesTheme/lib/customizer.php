@@ -10,25 +10,39 @@ function theme_customizer_register($wp_customize) {
     $wp_customize->remove_section( 'custom_css' );
 
 	//Header
-	$wp_customize->add_section( 'theme_customizer_header', array(
-		'title' => 'Global Header',
+	$wp_customize->add_section( 'theme_customizer_logos', array(
+		'title' => 'Logos',
 		'priority' => 10
 	) );
-	$wp_customize->add_setting( 'theme_customizer_logo', array(
+
+	//stacked logo, present on homepage header
+	$wp_customize->add_setting( 'theme_customizer_stacked_logo', array(
 		
 	) );
-	$wp_customize->add_control( new WP_Customize_Image_Control ( $wp_customize, 'theme_customizer_logo', array(
-		'label' => 'Header logo',
-		'section' => 'theme_customizer_header',
-		'settings' => 'theme_customizer_logo'
+	$wp_customize->add_control( new WP_Customize_Image_Control ( $wp_customize, 'theme_customizer_stacked_logo', array(
+		'label' => 'Stacked logo',
+		'section' => 'theme_customizer_logos',
+		'settings' => 'theme_customizer_stacked_logo'
 	) ) );
-	$wp_customize->add_setting( 'theme_customizer_alt_logo', array(
+
+	//horizontal logo
+	$wp_customize->add_setting( 'theme_customizer_horiz_logo', array(
 		
 	) );
-	$wp_customize->add_control( new WP_Customize_Image_Control ( $wp_customize, 'theme_customizer_alt_logo', array(
-		'label' => 'Alt logo',
-		'section' => 'theme_customizer_header',
-		'settings' => 'theme_customizer_alt_logo'
+	$wp_customize->add_control( new WP_Customize_Image_Control ( $wp_customize, 'theme_customizer_horiz_logo', array(
+		'label' => 'Horizontal logo',
+		'section' => 'theme_customizer_logos',
+		'settings' => 'theme_customizer_horiz_logo'
+	) ) );
+
+	//inverted logo for footer
+	$wp_customize->add_setting( 'theme_customizer_inverted_logo', array(
+		
+	) );
+	$wp_customize->add_control( new WP_Customize_Image_Control ( $wp_customize, 'theme_customizer_inverted_logo', array(
+		'label' => 'Inverted logo',
+		'section' => 'theme_customizer_logos',
+		'settings' => 'theme_customizer_inverted_logo'
 	) ) );
 
 

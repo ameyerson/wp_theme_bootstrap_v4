@@ -16,6 +16,8 @@ $theme_includes = [
     'lib/search-controller.php', //advanced custom fields
     'lib/template-tags.php', //
     'lib/wp_bootstrap_navwalker.php', //nav walker
+    'lib/wp_description_walker.php', //nav walker
+    'lib/mobile_select_navwalker.php', //nav walker
     'lib/wysiwyg.php', //custom wysiwyg formats
 
 ];
@@ -33,4 +35,14 @@ foreach ($theme_includes as $file) {
 unset($file, $filepath);
 
 
+function my_acf_admin_head() {
+    ?>
+    <style type="text/css">
 
+     .acf-range-wrap input[type="number"] {width: 80px !important;}
+
+    </style>
+    <?php
+}
+
+add_action('acf/input/admin_head', 'my_acf_admin_head');

@@ -14,6 +14,7 @@ function fadeImageBlock(elm) {
         elm.fadeIn('slow', function() {
 
             $(this).addClass('loaded');
+            $(this).siblings('.fade-overlay').addClass('loaded');
 
         });
     };
@@ -31,7 +32,7 @@ function fadeImageBlock(elm) {
 $(document).ready(function() {
     
 
-    $('.img-wrap').each(function() {
+    $('.fade-image').each(function() {
 
         fadeImageBlock($(this));
 

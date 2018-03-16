@@ -1,0 +1,23 @@
+
+.section-sidebar {
+
+    border: 6px solid $secondary;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    padding: 35px;
+    font-size: .8em;
+    line-height: 1.4em;
+
+    h3 {
+        font-size: 1.4em;
+    }
+    a {
+        color: darken($secondary, 15%);
+
+        &:hover {
+            color: $secondary;
+            text-decoration: none;
+        }
+    }
+
+} /* .section-sidebar */

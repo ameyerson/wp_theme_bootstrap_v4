@@ -1,0 +1,221 @@
+//--------------------------------------------------------------
+// Navbar for Home Template
+//--------------------------------------------------------------
+
+.page-template-template-home #global-navbar {
+
+    background-color: $secondary;
+    border-bottom: none;
+
+    .social {
+        position: absolute;
+        bottom: 80px;
+        left: 0px;
+        top: auto;
+        width: 100%;
+        text-align: center;
+
+        a {
+            color: #fff;
+        }
+
+    }
+
+    nav {
+
+        li a {
+            color: #fff;
+            text-transform: none;
+
+            margin: 4px 0;
+            padding-top: .35rem;
+            padding-bottom: .35rem;
+
+        }
+    }
+
+    a.donate {
+        width: 100%;
+        padding: 15px 30px;
+        margin: 0;
+
+
+    }
+
+    hr.sidebar-rule {
+        width: 60%;
+        margin: 0 auto;
+        border-color: darken($secondary, 5%);
+        display: none;
+    }
+    hr.top-rule {
+        display: none;
+    }
+
+    @include media-breakpoint-up(md) {
+    
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 240px;
+        height: auto;
+        z-index: 999;
+
+        nav {
+
+            height: 100%;
+            width: 100%;
+            padding: 40px 15px;
+            text-align: center;
+            display: block;
+            margin: 0;
+
+            @include clearfix;
+
+            .navbar-nav {      
+
+                li {
+                    display: block;
+                    float: none;
+
+                    a {
+                        font-size: 0.9em;
+                    }
+
+                    a:after {
+                        background: #fff;
+                    }
+                }
+
+                li.inline-donate {
+                    display: none;
+                }
+
+            }
+
+            img {
+
+                width: 100%;
+                max-width: 155px;
+                margin-bottom: 25px;
+                padding: 0;
+                margin-left: 0;
+                
+            }
+            .header-brand {
+                float: none;
+                background: transparent;
+                box-shadow: none;
+            }
+
+            h2 {
+
+                display: block;
+                @include font-sub-heading();
+                color: #fff;
+                font-size: 1.3rem;
+                line-height: 1em;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+
+                span {
+                    font-size: 1.4em;
+                }
+            }
+
+
+            a.donate {
+
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                top: auto;
+                right: auto;
+                color: #fff;
+
+
+/*                padding: 20px 30px;*/
+                border-radius: 0px;
+
+                transition: all 0.1s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.05);
+                    opacity: 0.8;
+                }
+
+            }
+        }    
+    } /* media-breakpoint-up(md) */
+
+    @include media-breakpoint-up(xl) {
+
+        width: 300px;
+
+        nav {
+
+            h1 {
+                font-size: 4.1rem;
+            }
+            padding-top: 45px;
+
+            img {
+                width: 100%;
+                max-width: 200px;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+                margin-top: 25px;
+                margin-bottom: 25px;
+            }
+            hr.sidebar-rule {
+                display: block;
+            }
+            .navbar-nav {
+                margin-top: 25px;
+
+                li a {
+                    margin: 10px 0;
+                    padding-top: .3rem;
+                    padding-bottom: .3rem;
+                    font-size: 1em;
+                }
+            }
+
+            a.donate {
+                padding: 30px 30px;
+            }
+            .social {
+                top: auto;
+                bottom: 115px;
+            }
+        }
+    } /* media-breakpoint-up(lg) */
+
+    @include media-breakpoint-up(xxl) {
+
+        nav {
+
+            img {
+                margin-bottom: 35px;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+                margin-bottom: 35px;
+            }
+        }
+    } /* media-breakpoint-up(xxl) */
+
+
+    .language-switcher {
+        
+        @include media-breakpoint-up(md) { 
+
+            color: #fff;
+        }
+    }
+}
+

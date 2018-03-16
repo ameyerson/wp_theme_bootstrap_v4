@@ -1,11 +1,13 @@
 <?php 
 
-/**
- * Template Name: Page Sections
- **/
-    
-
 get_header(); ?>
+
+
+	<section class="banner" style="background-image: (url(<?= get_stylesheet_directory_uri(); ?>/assets/img/banner-1">
+
+
+	</section>
+
 
 	<section class="main-content">
 

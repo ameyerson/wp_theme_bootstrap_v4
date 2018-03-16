@@ -13,7 +13,7 @@
 
 /*Wordpress Image Classes*/
 
-.global article.page {
+main {
     img {
         display: block; 
         margin-left: auto; 
@@ -100,11 +100,12 @@
 
 }
 
-@include media-breakpoint-up(sm) {
-    .global article.page {
+@include media-breakpoint-down(sm) {
+    main {
         img.alignright, img.alignleft, .alignright, .alignleft { 
             float: none; 
-            margin: 1em 0; 
+            margin: 1em auto; 
+            text-align: center;
         }
     }
 }
