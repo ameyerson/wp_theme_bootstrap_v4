@@ -3,25 +3,44 @@
 // ===================================
 'use strict';
 
+
+function scrollToDiv(target) {
+
+    var $offset = 50;
+
+    $('html, body').animate(
+        {
+            scrollTop: $(target).offset().top - $offset
+        }, 
+        600
+    );
+
+}
+
 $(document).ready(function() {
 
-    $('.scroll-down-indicator').click(function(e) {
+    $('.scroll-to-link').click(function(e) {
 
         var $target = $(this).attr('href');
 
         e.preventDefault();
 
-        $target = $(this).attr('href');
-        $('html, body').animate(
-            {
-                scrollTop: $($target).offset().top - 180
-            }, 
-            600, 
-            'easeInOutCubic'
-        );
+        scrollToDiv($target);
+
+    });    
+
+
+    //scroll on page load
+    var match = location.hash.match(/^#?(.*)$/)[1];
+
+    $('.scroll-to-link').each(function(){
+
+        if ($(this).attr('href') === '#' + match) {
+            $(this).click();
+        }
+
     });
 
-});
 
 if (!$('html').hasClass('touch') && $(window).width() > 1199) {
 
@@ -50,4 +69,3 @@ if (!$('html').hasClass('touch') && $(window).width() > 1199) {
     });
 
 }
-

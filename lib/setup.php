@@ -95,7 +95,7 @@ add_action( 'login_enqueue_scripts', 'bb_login_styles' );
 function bb_login_styles() { ?>
     <style type="text/css">
         body.login div#login h1 a {
-            background-image: url(<?php echo get_theme_mod('theme_customizer_logo') ?>);
+            background-image: url(<?php echo get_theme_mod('theme_customizer_stacked_logo') ?>);
             background-size: 200px;
             height: 200px;
             width: 200px;
@@ -126,6 +126,7 @@ function bb_widgets_init() {
   ) );
 }
 
+
 // ******************* Add Custom Menus ****************** //
 
 add_theme_support( 'menus' );
@@ -141,6 +142,7 @@ if ( function_exists( 'add_image_size' ) ) {
 // add_image_size( 'grid-box-bkg', 380, 240, true);
 
 }
+
 
 add_theme_support( 'html5', array(
     'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'

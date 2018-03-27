@@ -7,6 +7,7 @@
     right: 0;
     z-index: 0;
 
+    background: #000;
     opacity: 0.5;
 }
 
@@ -24,10 +25,9 @@
         padding: 30px;
         position: relative;
         z-index: 0;
+        
         h1, h2, p {
             margin: 10px 0;
-/*            max-width: 600px;*/
-/*            color: #fff;*/
         }
         h2 {
             font-size: 1.4em;

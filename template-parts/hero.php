@@ -15,7 +15,7 @@
             <div id="hero-video" class="hidden-xs hidden-sm" <?php echo $hero_data['video_datastring'] ?>></div>
         <?php } ?>
 
-        <div class="hero-overlay" style="background: <?php echo $hero_data['css'] ?>"></div>
+        <div class="hero-overlay fade-sibling" style="background: <?php echo $hero_data['css'] ?>"></div>
 
         <div class="hero-meta text-center">
 

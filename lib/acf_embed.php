@@ -30,3 +30,15 @@ add_filter('acf/settings/show_admin', '__return_true');
 
 // 4. Include ACF
 include_once( get_stylesheet_directory() . '/acf/acf.php' );
+
+function bb_acf_admin_head() {
+    ?>
+    <style type="text/css">
+
+     .acf-range-wrap input[type="number"] {width: 80px !important;}
+
+    </style>
+    <?php
+}
+
+add_action('acf/input/admin_head', 'bb_acf_admin_head');

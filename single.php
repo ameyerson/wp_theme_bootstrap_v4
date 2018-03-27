@@ -1,12 +1,17 @@
 <?php get_header(); ?>
+
 	<div class="container">
+
 		<header class="page">
 
 			<h2><?php the_title();?></h2>
 
 		</header>
+
 		<div class="row">
+
 			<div class="col-sm-9">
+
 				<article class="page">
 
 					<?php
@@ -23,7 +28,9 @@
 					?>
 
 						<img src="<?php echo $image_url ?>" class="" alt="<?php echo $alt_text ?>">
+
 					<?php  } ?>
+
 					<?php
 					// Start the loop.
 					while ( have_posts() ) : the_post();
@@ -45,12 +52,17 @@
 
 
 				</article>
+
 			</div>
+
 			<div class="col-sm-3">
+
 				<?php get_sidebar(); ?>
+
 			</div>
 
 		</div>
+
 		<aside>
 		<?php
 			// If comments are open or we have at least one comment, load up the comment template.
@@ -59,10 +71,12 @@
 			}
 		?>
 		</aside>
+
 		<?php
 		// Previous/next post navigation.
 			bb_post_navigation();
 		?>
+
 	</div>
 
-<?php get_footer('sticky'); ?>
+<?php get_footer(); ?>
