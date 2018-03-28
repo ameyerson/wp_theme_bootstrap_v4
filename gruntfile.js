@@ -129,9 +129,11 @@ module.exports = function(grunt) {
                     expand: true,
                     dest: '<%= config.build %>',
                     src: [
+                    'screenshot.png',
                     'README.txt',
                     'style.css',
                     '*.php',
+                    'template-parts/**',
                     'lib/**',
                     'dist/**',
                     'assets/**',

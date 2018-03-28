@@ -1,3 +1,135 @@
+//--------------------------------------------------------------
+// Contact Form 7
+//--------------------------------------------------------------
+
+.wpcf7-form {
+  margin-top: 40px;
+
+  h3 {
+    font-size: 1.1em;
+    margin-bottom: 2em;
+  }
+
+  input, textarea {
+    background: none;
+    border: solid 2px $primary;
+    box-shadow: none;
+    font-size: 1.2em;
+    padding: 10px 0px 4px;
+
+    &:focus,
+    &:active {
+       outline: none;
+        box-shadow: none;
+        background: none;
+    }
+
+    &[type="text"],
+    &[type="email"] {
+      border-width: 0 0 1px 0;
+      width: 100%;
+      margin-bottom: 2em;
+      font-size: 19px;
+    }
+
+      
+  }
+  textarea {
+    border-width: 1px;
+    width: 100%;
+    margin-bottom: 2em;
+    margin-top: 1em;
+    padding: 10px;
+  }
+  input[type="submit"], .button {
+      -webkit-appearance: none;
+      outline: none;
+      display: inline-block;
+      width: 100%;
+      max-width: 400px;
+      font-family: $font-family-sans-serif;
+      padding: 8px 25px;
+      text-transform: uppercase;
+      border: 2px solid $primary;
+      background: $primary;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      transition: background-color .2s, border-color .2s, color .2s;
+
+      &:hover {
+          text-decoration: none;
+          border-color: $primary;
+          color: $primary;
+          background: #fff;
+      }
+  }
+  &.form-inline {
+
+      .form-group {
+        width: 100%;
+        padding-right: 46px;
+        float: right;
+      }
+      input[type="submit"], .button {
+        margin-right: -100%;
+        float: right;
+        width: 42px;
+        width: 46px;
+        padding: 3px 0 0;
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+      }
+
+  }
+
+  .form-group {
+    position: relative;
+    display: block;
+
+    label {
+      position: absolute;
+      top: 1em;
+      left: 0px;
+      pointer-events: none;
+      font-style: italic;
+      font-weight: 300;
+      font-family: $headings-font-family;
+      font-size: 1em;
+      color: #999;
+      transition: all 0.3s ease-out 0s;
+    }
+
+    &.message-group label {
+      left: 10px;
+      top: 2em;
+    }
+
+    input:focus + label,
+    input.has-content + label {
+      top: -1em;
+      font-size: 0.7em;
+
+    }
+    textarea:focus + label,
+    textarea.has-content + label {
+      top: -.5em;
+      left: 0;
+      font-size: 0.7em;
+
+    }
+  }
+}
+div.wpcf7 img.ajax-loader {
+  position: relative;
+  top: 10px;
+  margin: 0 auto;
+  width: 16px;
+  height: 16px;
+  font-size: 1px;
+}
+
 
 //--------------------------------------------------------------
 // Searchform

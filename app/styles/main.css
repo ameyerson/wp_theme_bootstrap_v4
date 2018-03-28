@@ -1,9 +1,10 @@
 @charset "UTF-8";
-/*$body-color:    #333;*/
-/*$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;*/
-/*$headings-font-family:        'Amatic SC', cursive;
-$headings-font-weight:        700;
-$headings-color:              $primary;*/
+.bkg-light {
+  background-color: #f9f9f9; }
+
+.bkg-dark {
+  background-color: #e9ecef; }
+
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -64,7 +65,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #333;
   text-align: left;
   background-color: #fff; }
 
@@ -2603,7 +2604,7 @@ tbody.collapse.show {
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
   font-size: 1rem;
-  color: #212529;
+  color: #333;
   text-align: left;
   list-style: none;
   background-color: #fff;
@@ -4288,7 +4289,7 @@ tbody.collapse.show {
     text-decoration: none;
     background-color: #f8f9fa; }
   .list-group-item-action:active {
-    color: #212529;
+    color: #333;
     background-color: #e9ecef; }
 
 .list-group-item {
@@ -4783,7 +4784,7 @@ button.close {
 
 .popover-body {
   padding: 0.5rem 0.75rem;
-  color: #212529; }
+  color: #333; }
 
 .carousel {
   position: relative; }
@@ -9904,6 +9905,46 @@ a.text-dark:hover, a.text-dark:focus {
   overflow: visible;
   clip: auto; }
 
+@media (min-width: 992px) {
+  ul.two-col-list {
+    clear: both;
+    font-size: 0.85em; }
+    ul.two-col-list li {
+      width: 50%;
+      float: left;
+      padding-right: 40px; } }
+/* media-breakpoint-up(md) */
+blockquote {
+  font-size: 0.9em;
+  line-height: 1.5em;
+  font-style: italic;
+  margin: 0;
+  margin-right: 1em;
+  font-style: italic;
+  padding: .5em 0px .5em 15px;
+  border-left: 2px solid #A882CA;
+  line-height: 1.6;
+  position: relative;
+  /*    background: $light-bkg;*/ }
+
+@media (min-width: 768px) {
+  blockquote {
+    border-left: 8px solid #A882CA;
+    padding: 1.2em 30px 1.2em 75px;
+    margin-right: 1em; }
+
+  blockquote::before {
+    font-family: inherit;
+    content: "\201C";
+    color: #A882CA;
+    font-size: 4em;
+    position: absolute;
+    left: 10px;
+    top: -10px; }
+
+  blockquote::after {
+    content: ''; } }
+/* media-breakpoint-up(sm) */
 .fa {
   font-size: 20px; }
 
@@ -9916,6 +9957,95 @@ a.text-dark:hover, a.text-dark:focus {
   font-size: 20px;
   position: relative;
   top: 2px; }
+
+a {
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s; }
+
+body {
+  font-size: 1.2rem;
+  line-height: 1.5; }
+  body h1 {
+    font-size: 3rem; }
+  body h2 {
+    font-size: 2.4rem; }
+  body h3 {
+    font-size: 2.1rem; }
+  body h4 {
+    font-size: 1.8rem; }
+  body h5 {
+    font-size: 1.5rem; }
+  body h6 {
+    font-size: 1.2rem; }
+  body .lead {
+    font-size: 1.32rem; }
+
+@media (min-width: 992px) {
+  body {
+    font-size: 1.3rem;
+    line-height: 1.5; }
+    body h1 {
+      font-size: 3.25rem; }
+    body h2 {
+      font-size: 2.6rem; }
+    body h3 {
+      font-size: 2.275rem; }
+    body h4 {
+      font-size: 1.95rem; }
+    body h5 {
+      font-size: 1.625rem; }
+    body h6 {
+      font-size: 1.3rem; }
+    body .lead {
+      font-size: 1.56rem; } }
+@media (min-width: 1200px) {
+  body {
+    font-size: 1.4rem;
+    line-height: 1.6; }
+    body h1 {
+      font-size: 3.5rem; }
+    body h2 {
+      font-size: 2.8rem; }
+    body h3 {
+      font-size: 2.45rem; }
+    body h4 {
+      font-size: 2.1rem; }
+    body h5 {
+      font-size: 1.75rem; }
+    body h6 {
+      font-size: 1.4rem; }
+    body .lead {
+      font-size: 1.82rem; } }
+.font-body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: normal; }
+
+.font-lead {
+  font-family: inherit;
+  font-weight: normal; }
+
+.font-sub-heading {
+  font-family: inherit;
+  font-weight: 500; }
+
+.color-body {
+  color: #333; }
+
+.color-primary {
+  color: #F43448; }
+
+.color-secondary {
+  color: #A882CA; }
+
+.color-white {
+  color: #fff; }
+
+.color-black {
+  color: #000; }
+
+.lead {
+  font-family: inherit;
+  font-weight: 300;
+  color: #000; }
 
 .btn, .btn-primary, .search-form .search-submit, .btn-secondary, .gform_button {
   padding: 15px 30px;
@@ -9961,6 +10091,7 @@ a.text-dark:hover, a.text-dark:focus {
   left: 0;
   right: 0;
   z-index: 0;
+  background: #000;
   opacity: 0.5; }
 
 .hero .hero-background {
@@ -9975,9 +10106,7 @@ a.text-dark:hover, a.text-dark:focus {
   position: relative;
   z-index: 0; }
   .hero .hero-meta h1, .hero .hero-meta h2, .hero .hero-meta p {
-    margin: 10px 0;
-    /*            max-width: 600px;*/
-    /*            color: #fff;*/ }
+    margin: 10px 0; }
   .hero .hero-meta h2 {
     font-size: 1.4em;
     margin-bottom: 10px; }
@@ -10053,6 +10182,104 @@ video {
         margin-bottom: 10px; }
       .hero .hero-meta p {
         font-size: 1em; } }
+.wpcf7-form {
+  margin-top: 40px; }
+  .wpcf7-form h3 {
+    font-size: 1.1em;
+    margin-bottom: 2em; }
+  .wpcf7-form input, .wpcf7-form textarea {
+    background: none;
+    border: solid 2px #F43448;
+    box-shadow: none;
+    font-size: 1.2em;
+    padding: 10px 0px 4px; }
+    .wpcf7-form input:focus, .wpcf7-form input:active, .wpcf7-form textarea:focus, .wpcf7-form textarea:active {
+      outline: none;
+      box-shadow: none;
+      background: none; }
+    .wpcf7-form input[type="text"], .wpcf7-form input[type="email"], .wpcf7-form textarea[type="text"], .wpcf7-form textarea[type="email"] {
+      border-width: 0 0 1px 0;
+      width: 100%;
+      margin-bottom: 2em;
+      font-size: 19px; }
+  .wpcf7-form textarea {
+    border-width: 1px;
+    width: 100%;
+    margin-bottom: 2em;
+    margin-top: 1em;
+    padding: 10px; }
+  .wpcf7-form input[type="submit"], .wpcf7-form .button {
+    -webkit-appearance: none;
+    outline: none;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    padding: 8px 25px;
+    text-transform: uppercase;
+    border: 2px solid #F43448;
+    background: #F43448;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color .2s, border-color .2s, color .2s; }
+    .wpcf7-form input[type="submit"]:hover, .wpcf7-form .button:hover {
+      text-decoration: none;
+      border-color: #F43448;
+      color: #F43448;
+      background: #fff; }
+  .wpcf7-form.form-inline .form-group, .wpcf7-form.search-form .form-group, .wpcf7-form.form-inline .search-form label, .search-form .wpcf7-form.form-inline label, .wpcf7-form.search-form label {
+    width: 100%;
+    padding-right: 46px;
+    float: right; }
+  .wpcf7-form.form-inline input[type="submit"], .wpcf7-form.search-form input[type="submit"], .wpcf7-form.form-inline .button, .wpcf7-form.search-form .button {
+    margin-right: -100%;
+    float: right;
+    width: 42px;
+    width: 46px;
+    padding: 3px 0 0;
+    position: relative;
+    z-index: 2;
+    cursor: pointer; }
+  .wpcf7-form .form-group, .wpcf7-form .search-form label, .search-form .wpcf7-form label {
+    position: relative;
+    display: block; }
+    .wpcf7-form .form-group label, .wpcf7-form .search-form label label, .search-form .wpcf7-form label label {
+      position: absolute;
+      top: 1em;
+      left: 0px;
+      pointer-events: none;
+      font-style: italic;
+      font-weight: 300;
+      font-family: inherit;
+      font-size: 1em;
+      color: #999;
+      transition: all 0.3s ease-out 0s; }
+    .wpcf7-form .form-group.message-group label, .wpcf7-form .search-form label.message-group label, .search-form .wpcf7-form label.message-group label {
+      left: 10px;
+      top: 2em; }
+    .wpcf7-form .form-group input:focus + label, .wpcf7-form .search-form label input:focus + label, .search-form .wpcf7-form label input:focus + label,
+    .wpcf7-form .form-group input.has-content + label,
+    .wpcf7-form .search-form label input.has-content + label,
+    .search-form .wpcf7-form label input.has-content + label {
+      top: -1em;
+      font-size: 0.7em; }
+    .wpcf7-form .form-group textarea:focus + label, .wpcf7-form .search-form label textarea:focus + label, .search-form .wpcf7-form label textarea:focus + label,
+    .wpcf7-form .form-group textarea.has-content + label,
+    .wpcf7-form .search-form label textarea.has-content + label,
+    .search-form .wpcf7-form label textarea.has-content + label {
+      top: -.5em;
+      left: 0;
+      font-size: 0.7em; }
+
+div.wpcf7 img.ajax-loader {
+  position: relative;
+  top: 10px;
+  margin: 0 auto;
+  width: 16px;
+  height: 16px;
+  font-size: 1px; }
+
 .search-form label {
   font-weight: normal; }
 
@@ -10083,7 +10310,7 @@ video {
   border-radius: 0;
   border: 1px solid #f8f9fa;
   box-shadow: none;
-  color: #212529; }
+  color: #333; }
 
 label {
   font-size: 14px !important; }

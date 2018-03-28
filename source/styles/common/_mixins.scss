@@ -1,0 +1,35 @@
+@mixin background() {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@mixin abs_overlay($spacing) {
+    position: absolute;
+    top: $spacing;
+    bottom: $spacing;
+    right: $spacing;
+    left: $spacing;
+}
+
+@mixin padded-box($width, $height) {
+    height: 0;
+    width: 100%;
+    padding-top: $height / $width * 100%; 
+}
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin grow() {
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(0.96);
+    }
+}

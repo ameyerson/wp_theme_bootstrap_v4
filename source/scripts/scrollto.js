@@ -41,6 +41,7 @@ $(document).ready(function() {
 
     });
 
+});
 
 if (!$('html').hasClass('touch') && $(window).width() > 1199) {
 

@@ -983,6 +983,27 @@ var Util = function ($) {
   return Util;
 }($);
 //# sourceMappingURL=util.js.map
+'use strict';
+
+$(document).ready(function() {
+    
+    if ($('[data-fancybox="gallery"]').length > 0) {
+
+        $( '[data-fancybox="images"]' ).fancybox({
+          caption : function( instance, item ) {
+            var caption = $(this).data('caption') || '';
+
+            if ( item.type === 'image' ) {
+              caption = (caption.length ? caption + '<br />' : '') + '<a href="' + item.src + '">Download image</a>' ;
+            }
+
+            return caption;
+          }
+        });
+    }
+
+});
+
 // ===================================
 // Begin scrollto.js
 // ===================================
@@ -1176,6 +1197,47 @@ $(document).ready(function() {
         }
     }
 });
+// ===================================
+// Begin image.js
+// ===================================
+'use strict';
+
+function fadeImageBlock(elm) {
+
+    var src = elm.css('background-image'),
+        url = src.match(/\((.*?)\)/)[1].replace(/('|")/g,'');
+
+    var img = new Image();
+
+    img.onload = function() {
+        elm.fadeIn('slow', function() {
+
+            $(this).addClass('loaded');
+            $(this).siblings('.fade-sibling').addClass('loaded');
+
+        });
+    };
+
+    img.src = url;
+
+    if (img.complete) {
+        img.onload();
+    }
+
+    return true;
+
+}
+
+$(document).ready(function() {
+
+    $('.fade-image').each(function() {
+
+        fadeImageBlock($(this));
+
+    });
+
+});
+    
 // Begin main.js
 // ===================================
 'use strict';
@@ -1190,22 +1252,42 @@ $(document).ready(function() {
 // ===================================
 'use strict';
 
+
+function scrollToDiv(target) {
+
+    var $offset = 50;
+
+    $('html, body').animate(
+        {
+            scrollTop: $(target).offset().top - $offset
+        }, 
+        600
+    );
+
+}
+
 $(document).ready(function() {
 
-    $('.scroll-down-indicator').click(function(e) {
+    $('.scroll-to-link').click(function(e) {
 
         var $target = $(this).attr('href');
 
         e.preventDefault();
 
-        $target = $(this).attr('href');
-        $('html, body').animate(
-            {
-                scrollTop: $($target).offset().top - 180
-            }, 
-            600, 
-            'easeInOutCubic'
-        );
+        scrollToDiv($target);
+
+    });    
+
+
+    //scroll on page load
+    var match = location.hash.match(/^#?(.*)$/)[1];
+
+    $('.scroll-to-link').each(function(){
+
+        if ($(this).attr('href') === '#' + match) {
+            $(this).click();
+        }
+
     });
 
 });
@@ -1237,4 +1319,36 @@ if (!$('html').hasClass('touch') && $(window).width() > 1199) {
     });
 
 }
+// Begin main.js
+// ===================================
+'use strict';
 
+$(document).ready(function() {
+    
+    if ($('.be-sticky').length > 0) {
+
+        var sticky = new Waypoint.Sticky({
+
+          element: $('.be-sticky')[0]
+
+        });
+    }
+
+});
+
+if (!$('html').hasClass('touch') && $(window).width() > 1199) {
+
+    $(window).on('scroll', function() { 
+
+        if ( $(window).scrollTop() > $(window).height() ) {
+
+            $('#to-the-top').addClass('stuck');
+
+        } else { 
+
+            $('#to-the-top').removeClass('stuck');
+
+        }
+
+    });
+}

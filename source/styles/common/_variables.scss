@@ -26,11 +26,44 @@ $secondary:     #A882CA;
 
 $body-bg:       #fff;
 
+$bkg-light:     #f9f9f9;
+$bkg-dark:      #e9ecef;
+
+
 //--------------------------------------------------------------
 // TYPE VARIABLES
 //--------------------------------------------------------------
-/*$body-color:    #333;*/
-/*$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;*/
-/*$headings-font-family:        'Amatic SC', cursive;
-$headings-font-weight:        700;
-$headings-color:              $primary;*/
+$body-color:                #333;
+
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:            $font-family-sans-serif !default;
+
+$headings-font-family:        inherit !default;
+$headings-font-weight:        500 !default;
+$headings-line-height:        1.2 !default;
+$headings-color:              inherit !default;
+
+$sub-headings-font-family:        inherit !default;
+$sub-headings-font-weight:        500 !default;
+$sub-headings-line-height:        1.2 !default;
+$sub-headings-color:              inherit !default;
+
+$lead-font-family:        $headings-font-family;
+$lead-color:              #000;
+$lead-font-size:              (1.25rem) !default;
+$lead-font-weight:            300 !default;
+
+$hr-border-color:             rgba(#000, .1) !default;
+$hr-border-width:             1px !default;
+
+//--------------------------------------------------------------
+// Backgrounds
+//--------------------------------------------------------------
+
+.bkg-light {
+    background-color: $bkg-light;
+}
+.bkg-dark {
+    background-color: $bkg-dark;
+}

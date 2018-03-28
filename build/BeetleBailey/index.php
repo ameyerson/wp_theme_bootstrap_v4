@@ -10,12 +10,13 @@
 
 			endwhile;
 
-			// Previous/next page navigation.
-			// bb_pagination( );
 	?>
 		<nav>
+
 			<div class="container">
+
 				<ul class="pagination">
+
 				<?php 
 					$pager = paginate_links( array('type' => 'array'));
 					if (is_array($pager)) {
@@ -24,9 +25,13 @@
 					    }
 					}
 				?>
+
 				</ul>
+
 			</div>
+
 		</nav>
+
 	<?php
 		else :
 

@@ -10,7 +10,7 @@ $post_types = [
 
 foreach ( $post_types as $post_type ) {
     if ( ! $filepath = locate_template( $post_type ) ) {
-        trigger_error( sprintf( 'Error locating controller %s for inclusion', $controller ), E_USER_ERROR );
+        trigger_error( sprintf('Error locating controller %s for inclusion', $controller ), E_USER_ERROR );
     }
 
     require_once $filepath;
