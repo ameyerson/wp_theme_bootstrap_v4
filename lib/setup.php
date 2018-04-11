@@ -60,6 +60,12 @@ function bb_scripts_styles() {
     wp_enqueue_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', [ 'jquery' ], false, '1.12.9'); 
     // wp_enqueue_script('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', [ 'jquery' ], false, '4.0.0'); 
 
+    //fancybox
+    wp_enqueue_script('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js', [ 'jquery' ], false, '1.12.9'); 
+
+    // Cycle2 http://jquery.malsup.com/cycle2/
+    wp_enqueue_script('cycle2', 'http://malsup.github.com/jquery.cycle2.js', [ 'jquery' ], false, ''); 
+
     // enqueue fonts from google
     wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700', false, null);
 
