@@ -1,135 +1,3 @@
-//--------------------------------------------------------------
-// Contact Form 7
-//--------------------------------------------------------------
-
-.wpcf7-form {
-  margin-top: 40px;
-
-  h3 {
-    font-size: 1.1em;
-    margin-bottom: 2em;
-  }
-
-  input, textarea {
-    background: none;
-    border: solid 2px $primary;
-    box-shadow: none;
-    font-size: 1.2em;
-    padding: 10px 0px 4px;
-
-    &:focus,
-    &:active {
-       outline: none;
-        box-shadow: none;
-        background: none;
-    }
-
-    &[type="text"],
-    &[type="email"] {
-      border-width: 0 0 1px 0;
-      width: 100%;
-      margin-bottom: 2em;
-      font-size: 19px;
-    }
-
-      
-  }
-  textarea {
-    border-width: 1px;
-    width: 100%;
-    margin-bottom: 2em;
-    margin-top: 1em;
-    padding: 10px;
-  }
-  input[type="submit"], .button {
-      -webkit-appearance: none;
-      outline: none;
-      display: inline-block;
-      width: 100%;
-      max-width: 400px;
-      font-family: $font-family-sans-serif;
-      padding: 8px 25px;
-      text-transform: uppercase;
-      border: 2px solid $primary;
-      background: $primary;
-      color: #fff;
-      font-size: 24px;
-      cursor: pointer;
-      transition: background-color .2s, border-color .2s, color .2s;
-
-      &:hover {
-          text-decoration: none;
-          border-color: $primary;
-          color: $primary;
-          background: #fff;
-      }
-  }
-  &.form-inline {
-
-      .form-group {
-        width: 100%;
-        padding-right: 46px;
-        float: right;
-      }
-      input[type="submit"], .button {
-        margin-right: -100%;
-        float: right;
-        width: 42px;
-        width: 46px;
-        padding: 3px 0 0;
-        position: relative;
-        z-index: 2;
-        cursor: pointer;
-      }
-
-  }
-
-  .form-group {
-    position: relative;
-    display: block;
-
-    label {
-      position: absolute;
-      top: 1em;
-      left: 0px;
-      pointer-events: none;
-      font-style: italic;
-      font-weight: 300;
-      font-family: $headings-font-family;
-      font-size: 1em;
-      color: #999;
-      transition: all 0.3s ease-out 0s;
-    }
-
-    &.message-group label {
-      left: 10px;
-      top: 2em;
-    }
-
-    input:focus + label,
-    input.has-content + label {
-      top: -1em;
-      font-size: 0.7em;
-
-    }
-    textarea:focus + label,
-    textarea.has-content + label {
-      top: -.5em;
-      left: 0;
-      font-size: 0.7em;
-
-    }
-  }
-}
-div.wpcf7 img.ajax-loader {
-  position: relative;
-  top: 10px;
-  margin: 0 auto;
-  width: 16px;
-  height: 16px;
-  font-size: 1px;
-}
-
 
 //--------------------------------------------------------------
 // Searchform
@@ -152,75 +20,342 @@ div.wpcf7 img.ajax-loader {
 //--------------------------------------------------------------
 // Gravity Forms
 //--------------------------------------------------------------
-.gform_wrapper {
-    margin: 20px 0 30px;
+.gform_wrapper .theme-form {
+
+    max-width: 1200px;
+    margin: 2em 0;
 
     .gform_fields {
         @extend .row;
     }
     .gfield {
         clear: none;
+        width: 100%;
 
         &:nth-child(odd) {
             clear: both;
         }
     }
-}
-
-.comment-form input[type="email"], 
-.comment-form input[type="text"], 
-.comment-form input[type="url"], 
-.comment-form textarea, 
-.form-control, 
-.ginput_container input[type="date"], 
-.ginput_container input[type="email"], 
-.ginput_container input[type="number"], 
-.ginput_container input[type="password"], 
-.ginput_container input[type="tel"], 
-.ginput_container input[type="text"], 
-.ginput_container input[type="url"], 
-.ginput_container select, 
-.ginput_container textarea, 
-.search-form .search-field {
-    outline: none;
-    border-radius: 0;
-    border: 1px solid $gray-100;
-    box-shadow: none;
-    color: $body-color;
-}
-label {
-    @extend .h3;
-    font-size: 14px !important;
-
-    .gfield_required {
-        color: inherit;
+    .gform_page_footer {
+        border-top: 0;
     }
-}
-.gform_footer {
-    text-align: center;
-}
-.gform_button {
-    @extend .btn-secondary;
-    /*  width: 100%;*/
-}
-.contact-section .gform_button {
-    width: 100%;
-}
-.ginput_complex  {
-    border-left: 0;
-    padding: 0;
 
-    @include media-breakpoint-up(sm) {
+    input[type=text] {
 
-        margin-left: -15px;
-        margin-right: -15px;
+        border: 2px solid $border-color;
+        height: 64px;
+        padding: 0;
+        margin: 0;
+        font-family: $font-family-sans-serif;
+        font-size: 18px;
+        line-height: 59px;
+        color: #363636;
+        text-indent: 20px;
+        width: 100%;
+        border-radius: 5px;
+        margin: 0px;
 
-        .name_first,
-        .name_last {
-            display: block;
-            float: left;
-            width: 50%;
-            padding: 0 15px;
+    }
+
+    .comment-form input[type="email"], 
+    .comment-form input[type="text"], 
+    .comment-form input[type="url"], 
+    .comment-form textarea, 
+    .form-control, 
+    .ginput_container input[type="date"], 
+    .ginput_container input[type="email"], 
+    .ginput_container input[type="number"], 
+    .ginput_container input[type="password"], 
+    .ginput_container input[type="tel"], 
+    .ginput_container input[type="text"], 
+    .ginput_container input[type="url"], 
+    .ginput_container select, 
+    .ginput_container textarea, 
+    .search-form .search-field {
+        outline: none;
+        box-shadow: none;
+        color: $body-color;
+        border: 2px solid #cfcfcf;
+        padding: 0;
+        margin: 0;
+        font-family: $font-family-sans-serif;
+        font-size: 18px !important;
+        line-height: 59px;
+        color: #363636;
+        text-indent: 20px;
+        width: 100%;
+        border-radius: 5px;
+        margin: 0px;
+        margin-top: 2px;
+        margin-bottom: 5px;
+    }
+    .comment-form input[type="email"], 
+    .comment-form input[type="text"], 
+    .comment-form input[type="url"], 
+    .form-control, 
+    .ginput_container input[type="date"], 
+    .ginput_container input[type="email"], 
+    .ginput_container input[type="number"], 
+    .ginput_container input[type="password"], 
+    .ginput_container input[type="tel"], 
+    .ginput_container input[type="text"], 
+    .ginput_container input[type="url"], 
+    .ginput_container select, 
+    .search-form .search-field {
+        height: 56px;
+    }
+    .comment-form input[type="email"], 
+    .comment-form input[type="url"], 
+    .ginput_container input[type="email"],
+    .ginput_container input[type="url"] {
+        font-size: 0.75em !important;
+
+    }
+    label {
+/*        @extend .h3;*/
+        font-size: 16px !important;
+
+        .gfield_required {
+            color: $primary;
         }
-    } 
+    }
+    .ginput_container.ginput_container_phone {
+        max-width: 300px;
+    }
+    .gform_footer {
+        border-top: 0;
+        text-align: center;
+    }
+    input[type=button],
+    input[type=submit],
+    button {
+        @extend .btn-primary;
+        margin: 10px 5px;
+    }
+    .ginput_complex  {
+
+        border-left: 0;
+        padding: 0;
+
+    }
+
+    .gfield_radio {
+    
+        & > li {
+            margin-left: -18px !important;
+        }
+
+        input[type="radio"] {
+            opacity: 0;
+        }
+        label {
+            position: relative;
+            display: inline-block;
+            font-size: 20px !important;
+            line-height: 1.2em !important;
+            
+            /*16px width of fake checkbox + 6px distance between fake checkbox and text*/
+            padding-left: 36px;
+            margin-bottom: 10px;
+        }
+
+        label::before,
+        label::after {
+            position: absolute;
+            content: "";
+            
+            /*Needed for the line-height to take effect*/
+            display: inline-block;
+        }
+
+        /*Outer box of the fake checkbox*/
+        label::before{
+
+            height: 22px;
+            width: 22px;
+            border: 2px solid #cfcfcf;
+            left: 0px;
+            border-radius: 100%;
+            outline: none !important;
+            top: 0px;
+        }
+
+        /*Checkmark of the fake checkbox*/
+        label::after {
+            height: 14px;
+            width: 14px;
+            border: 3px solid #F43448;
+            left: 4px;
+            top: 4px;
+            border-radius: 100%;
+            outline: none !important;
+        }
+
+        /*Hide the checkmark by default*/
+        input[type="radio"] + label::after {
+            content: none;
+        }
+
+        /*Unhide on the checked state*/
+        input[type="radio"]:checked + label::after {
+            content: "";
+        }
+    
+    } /* .gfield_radio */
+    
+    .gfield_checkbox {
+
+        & > li {
+            margin-left: -18px !important;
+        }
+
+        input[type="checkbox"] {
+            opacity: 0;
+        }
+
+        label {
+            position: relative;
+            display: inline-block;
+            font-size: 20px !important;
+            line-height: 1.2em !important;
+            
+            /*16px width of fake checkbox + 6px distance between fake checkbox and text*/
+            padding-left: 36px;
+            margin-bottom: 10px;
+        }
+
+        label::before,
+        label::after {
+            position: absolute;
+            content: "";
+            
+            /*Needed for the line-height to take effect*/
+            display: inline-block;
+        }
+
+        /*Outer box of the fake checkbox*/
+        label::before{
+
+            height: 22px;
+            width: 22px;
+            border: 2px solid #cfcfcf;
+            left: 0px;
+            border-radius: 5px;
+            outline: none !important;
+            top: 0px;
+        }
+
+        /*Checkmark of the fake checkbox*/
+        label::after {
+            height: 7px;
+            width: 12px;
+            border-left: 3px solid $primary;
+            border-bottom: 3px solid $primary;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            left: 5px;
+            top: 7px;
+        }
+
+        /*Hide the checkmark by default*/
+        input[type="checkbox"] + label::after {
+            content: none;
+        }
+
+        /*Unhide on the checked state*/
+        input[type="checkbox"]:checked + label::after {
+            content: "";
+        }
+
+    } /* .gfield_checkbox */
+
+
+    .gf_page_steps {
+    
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .gf_step {
+            height: auto;
+            font-size: 1em;
+            padding: 10px 20px 5px;
+            border-bottom: 4px solid #000;
+            margin: 0;
+
+            &.gf_step_active {
+                border-color: $primary;
+            }
+        }
+
+        .gf_step_clear {
+            display: none;
+        }
+    
+    } /* .gf_page_steps */
+
+
+    &.two-col-form {
+
+        max-width: none;
+
+        .gform_body {
+            @extend .row;
+            padding-bottom: 100px;
+
+            & > ul {
+                display: none !important;
+            }
+        }
+
+
+/*        .gform_page {
+            display:block !important;
+            position:static;
+        }
+        .gform_next_button,
+        .gform_previous_button {
+            display: none !important;
+        }
+        .gform_page_footer {
+            position: absolute;
+            bottom: 0;
+            text-align: right;
+            right: 41px;
+        }*/
+    
+    } /* .two-col-form */
+
+}/* .gform_wrapper .laces-form */
+
+.theme-form.gform_confirmation_wrapper {
+
+    @include font-heading();
+    background: $bkg-light;
+    border: 1px solid lighten($secondary, 15%);
+    border-radius: 5px;
+    max-width: 80%;
+    padding: 40px 15px;
+    margin: 4em auto 2em;
+    font-size: 1.4em;
+    text-align: center;
+    font-weight: 700;
+    color: #000;
+}/* .laces-form.gform_confirmation_wrapper */
+
+.gform_ajax_spinner {
+    border: 5px solid rgba(255, 255, 255, 0.3); /* match with border-left */
+    border-left: 5px solid $secondary;
+    animation: spinner 1.1s infinite linear;
+    border-radius: 50%;
+    width: 80px;                    /* match with height for a circle */
+    height: 80px;
+}
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
